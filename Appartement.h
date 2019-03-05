@@ -7,7 +7,13 @@
 
 
 class Appartement {
-
+  private:
+    int pieces;
+    int etage;
+    bool garage;
+    bool cave;
+    bool balcon;
+    int nb_appart;
 };
 
 

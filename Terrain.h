@@ -7,7 +7,8 @@
 
 
 class Terrain {
-
+  private:
+    bool constructive;
 };
 
 

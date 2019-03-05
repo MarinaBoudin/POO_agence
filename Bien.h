@@ -7,7 +7,12 @@
 
 
 class Biens {
-
+  private:
+    int prix;
+    std::string adresse;
+    int m2;
+    int ref_client;
+    int ref_catalogue;
 };
 
 

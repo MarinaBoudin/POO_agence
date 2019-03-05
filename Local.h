@@ -7,7 +7,9 @@
 
 
 class Local {
-
+  private:
+    int taille_vitrine;
+    bool espace_stockage;
 };
 
 
