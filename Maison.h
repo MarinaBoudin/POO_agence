@@ -7,7 +7,11 @@
 
 
 class Maison {
-
+  private:
+    int piece;
+    bool garage;
+    bool jardin;
+    bool piscine;
 };
 
 
