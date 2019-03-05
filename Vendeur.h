@@ -1,13 +1,19 @@
-//
-// Created by asa on 05/03/19.
-//
-
 #ifndef PROJECT_VENDEUR_H
 #define PROJECT_VENDEUR_H
 
 
-class Vendeur {
+#include <string>
+#include "Client.h"
 
+class Vendeur : public Client {
+private:
+    //TODO : créer une liste de références vers la liste des biens en vente
+public:
+    Vendeur(std::string nom);
+
+    ~Vendeur();
+
+    std::string getnom();
 };
 
 

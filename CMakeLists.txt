@@ -3,4 +3,4 @@ project(CLion_TD3_4)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(POO_agence main.cpp Acheteur.cpp Acheteur.h Agence.cpp Agence.h Appartement.cpp Appartement.h Biens.cpp Biens.h Client.cpp Client.h Local.cpp Local.h Maison.cpp Maison.h Terrain.cpp Terrain.h Vendeur.cpp Vendeur.h)
+add_executable(POO_agence main.cpp Acheteur.cpp Acheteur.h Agence.cpp Agence.h Appartement.cpp Appartement.h Bien.cpp Bien.h Client.cpp Client.h Local.cpp Local.h Maison.cpp Maison.h Terrain.cpp Terrain.h Vendeur.cpp Vendeur.h Adresse.cpp Adresse.h)

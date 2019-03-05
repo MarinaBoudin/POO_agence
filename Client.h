@@ -1,13 +1,22 @@
-//
-// Created by asa on 05/03/19.
-//
-
 #ifndef PROJECT_CLIENT_H
 #define PROJECT_CLIENT_H
 
 
-class Client {
+#include <string>
+#include "Adresse.h"
 
+class Client {
+protected:
+    std::string nom;
+    Adresse adresse;
+public:
+    Client(std::string nom);
+
+    ~Client();
+
+    std::string getnom();
+
+    void show();
 };
 
 

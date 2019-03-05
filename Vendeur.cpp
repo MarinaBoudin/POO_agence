@@ -1,5 +1,9 @@
-//
-// Created by asa on 05/03/19.
-//
-
 #include "Vendeur.h"
+
+using namespace std;
+
+Vendeur::Vendeur(string nom) : Client(nom) {}
+
+Vendeur::~Vendeur() {}
+
+string Vendeur::getnom() { return nom; }
