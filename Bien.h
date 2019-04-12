@@ -4,7 +4,7 @@
 
 #ifndef PROJECT_BIENS_H
 #define PROJECT_BIENS_H
-
+#include string;
 
 class Biens {
   private:
