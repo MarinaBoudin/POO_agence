@@ -1,9 +1,25 @@
 #ifndef POO_AGENCE_AGENCE_H
 #define POO_AGENCE_AGENCE_H
 
+#include "Bien.h"
+#include "Appartement.h"
+#include "Maison.h"
+#include "Local.h"
+#include "Terrain.h"
+#include "Client.h"
+#include "Acheteur.h"
+#include "Vendeur.h"
+
+#include <iostream>
+#include <map>
+#include <vector>
 
 class Agence {
-  
+  private:
+    std::map<std::string, std::map<Bien,std::vector<Acheteur>>> dico_biens;
+  public:
+    Agence();
+    std::map<std::string, std::map<Bien,std::vector<Acheteur>>> get_dico_biens();
 };
 
 

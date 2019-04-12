@@ -1,7 +1,14 @@
-#include "Acheteur.h"
-#include "Adresse.h"
 #include "Client.h"
+#include "Acheteur.h"
 #include "Vendeur.h"
+#include "Adresse.h"
+#include "Bien.h"
+#include "Appartement.h"
+#include "Maison.h"
+#include "Terrain.h"
+#include "Local.h"
+#include "Agence.h"
+
 #include <iostream>
 
 using namespace std;
@@ -96,12 +103,16 @@ bool menu_switch(bool run){
 }
 
 int main() {
-    // Vendeur bob = Vendeur("Bob");
+    Agence test;
+    map<string, map<Bien,vector<Acheteur>>>::iterator im;
+    for (im=test.get_dico_biens().begin();im!=test.get_dico_biens().end();im++){
+      cout << im->first << endl;
+    }   // Vendeur bob = Vendeur("Bob");
     // bob.show();
-    cout << "Bienvenue dans le gestionnaire d'agence. Que souhaitez-vous faire ?" << endl;
-    bool run=true;
-    while (run){
-      run = menu_switch(run);
-    }
+    // cout << "Bienvenue dans le gestionnaire d'agence. Que souhaitez-vous faire ?" << endl;
+    // bool run=true;
+    // while (run){
+    //   run = menu_switch(run);
+    // }
     return 0;
 };

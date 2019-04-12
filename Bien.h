@@ -19,6 +19,9 @@ class Bien {
     int get_m2();
     int get_ref_client();
     int get_ref_catalogue();
+    bool operator <(const Bien &b) const{
+      return (prix<b.prix);
+    }
 };
 
 

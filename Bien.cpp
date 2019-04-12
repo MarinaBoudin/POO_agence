@@ -25,3 +25,11 @@ int Bien::get_ref_client(){
 int Bien::get_ref_catalogue(){
   return ref_catalogue;
 }
+// bool Bien::operator<(const Bien &b){
+//   if (prix<b.get_prix()){
+//     return true;
+//   }
+//   else{
+//     return false;
+//   }
+// }
