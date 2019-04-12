@@ -2,6 +2,7 @@
 #define PROJECT_LOCAL_H
 
 #include "Bien.h"
+#include "Adresse.h"
 
 class Local : public Bien{
   private:

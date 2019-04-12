@@ -1,6 +1,7 @@
 #ifndef PROJECT_TERRAIN_H
 #define PROJECT_TERRAIN_H
 
+#include "Adresse.h"
 #include "Bien.h"
 
 class Terrain : public Bien{

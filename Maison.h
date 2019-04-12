@@ -2,6 +2,7 @@
 #define PROJECT_MAISON_H
 
 #include "Bien.h"
+#include "Adresse.h"
 
 class Maison : public Bien{
   private:
