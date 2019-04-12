@@ -1,7 +1,6 @@
 #ifndef PROJECT_ACHETEURS_H
 #define PROJECT_ACHETEURS_H
 
-
 #include <map>
 #include "Client.h"
 
@@ -12,6 +11,8 @@ public:
     Acheteur(std::string nom);
 
     ~Acheteur();
+
+    void show();
 
     std::string getnom();
 };

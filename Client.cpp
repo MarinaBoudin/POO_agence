@@ -4,15 +4,10 @@
 
 using namespace std;
 
-Client::Client(string nom) : nom(nom) {
-    adresse = Adresse();
-}
+Client::Client(string nom) : nom(nom) {}
 
 Client::~Client() {};
 
-string Client::getnom() { return nom; }
+string Client::getnom() {}
 
-void Client::show() {
-    cout << nom << " habite au " << endl;
-    adresse.show();
-}
+void Client::show() {}

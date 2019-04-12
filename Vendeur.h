@@ -13,6 +13,8 @@ public:
 
     ~Vendeur();
 
+    void show();
+
     std::string getnom();
 };
 
