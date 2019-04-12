@@ -13,8 +13,8 @@ Appartement::Appartement(int _prix, Adresse _adresse, int _m2, int _ref_client, 
 int Appartement::get_pieces(){
   return pieces;
 }
-int Appartement::get_etages(){
-  return etages;
+int Appartement::get_etage(){
+  return etage;
 }
 bool Appartement::get_garage(){
   return garage;

@@ -15,7 +15,7 @@ class Appartement : public Bien{
   public:
     Appartement(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue,int _pieces,int _etage,bool _garage,bool _cave,bool _balcon,int _nb_appart);
     int get_pieces();
-    int get_etages();
+    int get_etage();
     bool get_garage();
     bool get_cave();
     bool get_balcon();
