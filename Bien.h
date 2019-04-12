@@ -12,6 +12,13 @@ class Bien {
     int m2;
     int ref_client;
     int ref_catalogue;
+  public:
+    Bien(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue);
+    int get_prix();
+    Adresse get_adresse();
+    int get_m2();
+    int get_ref_client();
+    int get_ref_catalogue();
 };
 
 
