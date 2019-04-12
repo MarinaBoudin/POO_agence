@@ -1,7 +1,10 @@
-//
-// Created by asa on 05/03/19.
-//
+#include "Acheteur.h"
+#include "Adresse.h"
+#include "Client.h"
+#include "Vendeur.h"
 
-int main(){
 
+int main() {
+    Vendeur bob = Vendeur("Bob");
+    bob.show();
 };

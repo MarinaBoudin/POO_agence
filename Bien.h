@@ -1,19 +1,18 @@
-//
-// Created by asa on 05/03/19.
-//
+#ifndef PROJECT_BIEN_H
+#define PROJECT_BIEN_H
 
-#ifndef PROJECT_BIENS_H
-#define PROJECT_BIENS_H
-#include string;
 
-class Biens {
+#include <string>
+#include "Adresse.h"
+
+class Bien {
   private:
     int prix;
-    std::string adresse;
+    Adresse adresse;
     int m2;
     int ref_client;
     int ref_catalogue;
 };
 
 
-#endif //PROJECT_BIENS_H
+#endif //PROJECT_BIEN_H

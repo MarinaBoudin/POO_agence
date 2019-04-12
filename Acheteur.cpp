@@ -1,5 +1,9 @@
-//
-// Created by asa on 05/03/19.
-//
-
 #include "Acheteur.h"
+
+using namespace std;
+
+Acheteur::Acheteur(string nom) : Client(nom) {}
+
+Acheteur::~Acheteur() {}
+
+string Acheteur::getnom() { return nom; }
