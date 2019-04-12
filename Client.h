@@ -14,9 +14,9 @@ public:
 
     ~Client();
 
-    std::string getnom();
+    virtual std::string getnom() = 0;
 
-    void show();
+    virtual void show() = 0;
 };
 
 
