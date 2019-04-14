@@ -4,17 +4,23 @@
 #include "Bien.h"
 #include "Adresse.h"
 
-class Maison : public Bien{
-  private:
+class Maison : public Bien {
+private:
     int piece;
     bool garage;
     bool jardin;
     bool piscine;
-  public:
-    Maison(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue,int _piece, bool _garage, bool _jardin, bool _piscine);
+public:
+    Maison(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue, int _piece, bool _garage,
+           bool _jardin,
+           bool _piscine);
+
     int get_piece();
+
     bool get_garage();
+
     bool get_jardin();
+
     bool get_piscine();
 };
 
