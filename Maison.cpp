@@ -1,6 +1,8 @@
 #include "Maison.h"
 #include "Adresse.h"
 #include "Bien.h"
+#include <iostream>
+using namespace std;
 
 Maison::Maison(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue, int _piece, bool _garage,
                bool _jardin,
@@ -25,4 +27,17 @@ bool Maison::get_jardin() {
 
 bool Maison::get_piscine() {
     return piscine;
+}
+void Maison::affiche(){
+  Bien::affiche();
+  cout << "Nombre de pièces : " << piece <<endl;
+  if (garage==true){
+    cout << "Présence d'un garage." << endl;
+  }
+  if (jardin==true){
+    cout << "Présence d'un jardin." << endl;
+  }
+  if (piscine==true){
+    cout << "Présence d'une piscine." << endl;
+  }
 }

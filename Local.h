@@ -3,6 +3,7 @@
 
 #include "Bien.h"
 #include "Adresse.h"
+#include <iostream>
 
 class Local : public Bien{
   private:
@@ -12,6 +13,7 @@ class Local : public Bien{
     Local(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue,int _taille_vitrine, bool _espace_stockage);
     int get_taille_vitrine();
     bool get_espace_stockage();
+    void affiche();
 };
 
 

@@ -3,6 +3,7 @@
 
 #include "Bien.h"
 #include "Adresse.h"
+#include <iostream>
 
 class Maison : public Bien {
 private:
@@ -14,14 +15,11 @@ public:
     Maison(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue, int _piece, bool _garage,
            bool _jardin,
            bool _piscine);
-
     int get_piece();
-
     bool get_garage();
-
     bool get_jardin();
-
     bool get_piscine();
+    void affiche();
 };
 
 

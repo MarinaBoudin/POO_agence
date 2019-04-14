@@ -1,6 +1,8 @@
 #include "Local.h"
 #include "Adresse.h"
 #include "Bien.h"
+#include <iostream>
+using namespace std;
 
 Local::Local(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue, int _taille_vitrine,
              bool _espace_stockage)
@@ -15,4 +17,11 @@ int Local::get_taille_vitrine() {
 
 bool Local::get_espace_stockage() {
     return espace_stockage;
+}
+void Local::affiche(){
+  Bien::affiche();
+  cout << "Taille de la vitrine : " << taille_vitrine << endl;
+  if (espace_stockage==true){
+    cout << "Présence d'un espace de stockage." <<endl;
+  }
 }

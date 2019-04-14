@@ -1,6 +1,9 @@
 #include "Appartement.h"
 #include "Adresse.h"
 #include "Bien.h"
+#include <iostream>
+
+using namespace std;
 
 Appartement::Appartement(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue, int _pieces,
                          int _etage, bool _garage,
@@ -36,4 +39,19 @@ bool Appartement::get_balcon() {
 
 int Appartement::get_nb_appart() {
     return nb_appart;
+}
+void Appartement::affiche(){
+  Bien::affiche();
+  cout << "Nombre de pièces : " << pieces << endl;
+  cout << "Etages où se trouve l'appartement : " << etage << endl;
+  if (garage==true){
+    cout << "Présence d'un garage." << endl;
+  }
+  if (cave==true){
+    cout << "Présence d'une cave." << endl;
+  }
+  if (balcon==true){
+    cout << "Présence d'un balcon." << endl;
+  }
+  cout << "Nombre d'appartement dans l'immeuble : " << nb_appart << endl;
 }

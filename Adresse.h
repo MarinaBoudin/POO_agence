@@ -13,9 +13,7 @@ private:
 
 public:
     Adresse();
-
     void show();
-
     void remplir();
 };
 

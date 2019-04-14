@@ -1,6 +1,7 @@
 #include "Bien.h"
 #include "Adresse.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -30,6 +31,15 @@ int Bien::get_ref_client() {
 
 int Bien::get_ref_catalogue() {
     return ref_catalogue;
+}
+void Bien::affiche(){
+  cout << "Prix : " << prix << endl;
+  cout << "Adresse : " ;
+  adresse.show() ;
+  cout << "\n";
+  cout << "Nombre de m² : " << m2 << endl;
+  cout << "Référence client : " << ref_client << endl;
+  cout << "Référence catalogue : " << ref_catalogue << endl;
 }
 // bool Bien::operator<(const Bien &b){
 //   if (prix<b.get_prix()){
