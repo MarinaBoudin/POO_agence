@@ -8,13 +8,13 @@ private:
     std::string voie;
     std::string nomVoie;
     std::string ville;
-    int numero;
-    int CP;
+    int numero = 0;
+    int CP = 0;
 
 public:
     Adresse();
-
     void show();
+    void remplir();
 };
 
 
