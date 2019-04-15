@@ -21,9 +21,9 @@ public:
     int get_ref_client();
     int get_ref_catalogue();
     void affiche();
-    // bool operator<(const Bien &b) const {
-    //     return (prix < b.prix);
-    // }
+    bool operator<(const Bien &b) const {
+        return (prix < b.prix);
+    }
 };
 
 

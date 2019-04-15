@@ -41,11 +41,3 @@ void Bien::affiche(){
   cout << "Référence client : " << ref_client << endl;
   cout << "Référence catalogue : " << ref_catalogue << endl;
 }
-// bool Bien::operator<(const Bien &b){
-//   if (prix<b.get_prix()){
-//     return true;
-//   }
-//   else{
-//     return false;
-//   }
-// }
