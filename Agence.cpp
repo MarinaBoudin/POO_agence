@@ -46,3 +46,15 @@ void Agence::ajout_acheteur(Acheteur a){
 void Agence::ajout_vendeur(Vendeur v){
   vendeurs.push_back(v);
 }
+
+void Agence::ajout_bien(string a, Bien b){
+  dico_biens[a][b];
+}
+
+void Agence::recherche_biens(string type, int prix, int m2){
+  // map<string, map<Bien,vector<Acheteur>>> mapp=test.get_dico_biens();
+  map<Bien,vector<Acheteur>>::iterator im;
+  for (im=dico_biens[type].begin();im!=dico_biens[type].end();im++){
+    if (prix <= first.get_prix())
+  }
+}
