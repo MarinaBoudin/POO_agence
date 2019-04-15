@@ -52,9 +52,11 @@ void Agence::ajout_vendeur(Vendeur v){
   vendeurs.push_back(v);
 }
 
-// void Agence::ajout_bien(string a, Bien b){
-//   dico_biens[a][b];
-// }
+void Agence::ajout_bien(string a, Bien b){
+  dico_biens[a][b];
+  int ref = b.get_ref_catalogue();
+  cout << "La ref cata est "<<ref<<endl;
+}
 
 // void Agence::recherche_biens(){
 //   cout << "Recherchez vous un appartement(1), une maison(2), un local (3) ou un terrain(4) ?";

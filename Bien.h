@@ -12,14 +12,14 @@ private:
     Adresse adresse;
     int m2;
     int ref_client;
-    int ref_catalogue;
+    static int ref_catalogue;
   public:
-    Bien(int _prix, int _m2, int _ref_client, int _ref_catalogue);
+    Bien(int _prix, int _m2, int _ref_client);
     int get_prix();
     Adresse get_adresse();
     int get_m2();
     int get_ref_client();
-    int get_ref_catalogue();
+    static int get_ref_catalogue();
     void affiche();
     bool operator<(const Bien &b) const {
         return (prix < b.prix);

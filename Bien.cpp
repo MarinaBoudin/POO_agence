@@ -5,11 +5,13 @@
 
 using namespace std;
 
-Bien::Bien(int _prix, int _m2, int _ref_client, int _ref_catalogue){
+int Bien::ref_catalogue=0;
+
+Bien::Bien(int _prix, int _m2, int _ref_client){
   prix=_prix;
   m2=_m2;
   ref_client=_ref_client;
-  ref_catalogue=_ref_catalogue;
+  ref_catalogue++;
 }
 
 int Bien::get_prix() {

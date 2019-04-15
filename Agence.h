@@ -26,7 +26,7 @@ class Agence {
     std::vector<Vendeur> get_vendeurs();
     void ajout_acheteur(Acheteur& a);
     void ajout_vendeur(Vendeur v);
-    // void ajout_bien(int a, Bien b);
+    void ajout_bien(std::string a, Bien b);
     // void recherche_biens();
 };
 
