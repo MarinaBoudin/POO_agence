@@ -255,7 +255,7 @@ int main() {
               proposition_achat();
               break;
           case 4 :
-              affichage_biens();
+              mon_agence.recherche_biens();
               break;
           case 5 :
               contrats();

@@ -20,7 +20,11 @@ private:
     int get_m2();
     int get_ref_client();
     static int get_ref_catalogue();
-    void affiche();
+    virtual void affiche();
+    virtual void recherche_appart();
+    // virtual void recherche_maison();
+    // virtual void recherche_terrain();
+    // virtual void recherche_local();
     bool operator<(const Bien &b) const {
         return (prix < b.prix);
     }

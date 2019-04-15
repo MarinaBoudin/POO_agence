@@ -42,3 +42,5 @@ void Bien::affiche(){
   cout << "Référence client : " << ref_client << endl;
   cout << "Référence catalogue : " << ref_catalogue << endl;
 }
+
+void Bien::recherche_appart(){}
