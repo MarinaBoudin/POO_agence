@@ -14,7 +14,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 Agence::Agence(){
   Bien test = Bien(2,1,65,98);
   // Acheteur lol = Acheteur("bob");
@@ -26,24 +25,6 @@ Agence::Agence(){
   dico_biens["Maison"];
   dico_biens["Local"];
   dico_biens["Terrain"];
-=======
-Agence::Agence() {
-    cout << "FAILLLLLL" << endl;
-    Adresse ben; //Le constructeur par défaut met toutes les valeurs Null ou 0
-    //il faut créer l'adresse par la méthode "remplir()"
-    cout << "CECI EST UN TEST" << endl;
-    Bien test = Bien(2, ben, 1, 65, 98);
-//   Acheteur lol = Acheteur("bob");
-    // map<Bien,vector<Acheteur>> a;
-    // vector<Acheteur> poo;
-    // poo.push_back(lol);
-    // a[test]=poo;
-    // a.insert(make_pair(test,poo));
-    dico_biens["Appartement"];
-    dico_biens["Maison"];
-    dico_biens["Local"];
-    dico_biens["Terrain"];
->>>>>>> 476bc1e02c9a16c713257f7f43fe8d51c747817c
 }
 
 std::map<std::string, std::map<Bien, std::vector<Acheteur>>> Agence::get_dico_biens() {

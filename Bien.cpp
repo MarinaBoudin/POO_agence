@@ -5,20 +5,11 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 Bien::Bien(int _prix, int _m2, int _ref_client, int _ref_catalogue){
   prix=_prix;
   m2=_m2;
   ref_client=_ref_client;
   ref_catalogue=_ref_catalogue;
-=======
-Bien::Bien(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue) {
-    prix = _prix;
-    adresse = _adresse;
-    m2 = _m2;
-    ref_client = _ref_client;
-    ref_catalogue = _ref_catalogue;
->>>>>>> 476bc1e02c9a16c713257f7f43fe8d51c747817c
 }
 
 int Bien::get_prix() {

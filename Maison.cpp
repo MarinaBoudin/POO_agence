@@ -4,21 +4,11 @@
 #include <iostream>
 using namespace std;
 
-<<<<<<< HEAD
 Maison::Maison(int _prix, int _m2, int _ref_client, int _ref_catalogue,int _piece, bool _garage, bool _jardin, bool _piscine):Bien(_prix, _m2, _ref_client, _ref_catalogue){
   piece=_piece;
   garage=_garage;
   jardin=_jardin;
   piscine=_piscine;
-=======
-Maison::Maison(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue, int _piece, bool _garage,
-               bool _jardin,
-               bool _piscine) : Bien(_prix, _adresse, _m2, _ref_client, _ref_catalogue) {
-    piece = _piece;
-    garage = _garage;
-    jardin = _jardin;
-    piscine = _piscine;
->>>>>>> 476bc1e02c9a16c713257f7f43fe8d51c747817c
 }
 
 int Maison::get_piece() {
