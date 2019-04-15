@@ -19,6 +19,8 @@ public:
 
     void Avisiter(int ref_catalogue, int prop, int montant);
 
+    void retirerVisite(int ref_catalogue);
+
     bool operator<(const Acheteur& other);
 };
 

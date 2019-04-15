@@ -3,11 +3,13 @@
 
 
 #include <string>
+#include <vector>
 #include "Client.h"
+#include "Bien.h"
 
 class Vendeur : public Client {
 private:
-    //TODO : créer une liste de références vers la liste des biens en vente
+    std::vector<Bien *> listBiens;
 public:
     Vendeur(std::string nom);
 
@@ -16,6 +18,10 @@ public:
     void show();
 
     std::string getnom();
+
+    void ajouter_vente(Bien *b);
+
+    void retirer_vente(Bien *b);
 };
 
 
