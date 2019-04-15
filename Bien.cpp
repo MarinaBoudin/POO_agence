@@ -3,9 +3,8 @@
 #include <string>
 using namespace std;
 
-Bien::Bien(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue){
+Bien::Bien(int _prix, int _m2, int _ref_client, int _ref_catalogue){
   prix=_prix;
-  adresse=_adresse;
   m2=_m2;
   ref_client=_ref_client;
   ref_catalogue=_ref_catalogue;

@@ -2,7 +2,7 @@
 #include "Adresse.h"
 #include "Bien.h"
 
-Appartement::Appartement(int _prix, Adresse _adresse, int _m2, int _ref_client, int _ref_catalogue,int _pieces,int _etage,bool _garage,bool _cave,bool _balcon,int _nb_appart):Bien(_prix,_adresse,_m2,_ref_client,_ref_catalogue){
+Appartement::Appartement(int _prix, int _m2, int _ref_client, int _ref_catalogue,int _pieces,int _etage,bool _garage,bool _cave,bool _balcon,int _nb_appart):Bien(_prix,_m2,_ref_client,_ref_catalogue){
   pieces=_pieces;
   etage=_etage;
   garage=_garage;

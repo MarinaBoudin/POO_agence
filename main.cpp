@@ -104,15 +104,25 @@ bool menu_switch(bool run){
 
 int main() {
     Agence test;
+    map<string, map<Bien,vector<Acheteur>>> mapp=test.get_dico_biens();
     map<string, map<Bien,vector<Acheteur>>>::iterator im;
-    for (im=test.get_dico_biens().begin();im!=test.get_dico_biens().end();im++){
+    for (im=mapp.begin();im!=mapp.end();im++){
       cout << im->first << endl;
-    }   // Vendeur bob = Vendeur("Bob");
+    }
+    // map<string,int> mapp;
+    // mapp["c1"]=1;
+    // mapp["c2"]=3;
+    // map<string,int>::iterator im2;
+    // for (im2=mapp.begin();im2!=mapp.end();im2++){
+    //   cout << im2->first << im2->second << endl;
+    // }
+    // Vendeur bob = Vendeur("Bob");
     // bob.show();
     // cout << "Bienvenue dans le gestionnaire d'agence. Que souhaitez-vous faire ?" << endl;
     // bool run=true;
     // while (run){
     //   run = menu_switch(run);
     // }
+    cout << "sortie" << endl;
     return 0;
 };
