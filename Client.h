@@ -9,10 +9,13 @@ class Client {
 protected:
     std::string nom;
     Adresse adresse;
+    int id_client;
 public:
-    Client(std::string nom);
+    Client(std::string nom, int id);
 
     ~Client();
+
+    virtual int get_id();
 
     virtual std::string getnom() = 0;
 

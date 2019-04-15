@@ -9,7 +9,7 @@ class Acheteur : public Client {
 private:
     std::map<int, std::pair<std::string, int>> visites;
 public:
-    Acheteur(std::string nom);
+    Acheteur(std::string nom, int id);
 
     ~Acheteur();
 
