@@ -51,7 +51,7 @@ void creer_client(Agence mon_agence) {
       int type;
       cin >> type;
       if (type==1){
-        Acheteur* acheteur = new Acheteur(name);
+        Acheteur acheteur = Acheteur(name);
         mon_agence.ajout_acheteur(acheteur);
       }
       else if (type==2){
@@ -184,18 +184,7 @@ int main() {
       switch (choix) {
           case 1 :
               creer_client(mon_agence);
-              {
-                vector<Acheteur*> a = mon_agence.get_acheteurs();
-                int taille_a = a.size();
-                cout << taille_a << endl;
-                for (int k =0;k<taille_a;k++){
-                  a[k]->show();
-                }
-              vector<Vendeur> b = mon_agence.get_vendeurs();
-              int taille_b=b.size();
-              for(int i=0;i<taille_b;i++){
-                b[i].show();
-              }}
+
               break;
           case 2 :
               creer_bien(mon_agence);
