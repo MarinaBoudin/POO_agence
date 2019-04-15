@@ -51,10 +51,14 @@ void Agence::ajout_bien(string a, Bien b){
   dico_biens[a][b];
 }
 
-void Agence::recherche_biens(string type, int prix, int m2){
+void Agence::recherche_biens(){
+  cout << "Recherchez vous une maison (1)"
   // map<string, map<Bien,vector<Acheteur>>> mapp=test.get_dico_biens();
   map<Bien,vector<Acheteur>>::iterator im;
   for (im=dico_biens[type].begin();im!=dico_biens[type].end();im++){
-    if (prix <= first.get_prix())
+    // int biencible = it->first;
+    if ((it->first.get_prix() <= prix) && (it->first.get_m2() <= m2)){
+      it->first.affichage_biens();
+    }
   }
 }
