@@ -12,18 +12,12 @@ string Acheteur::getnom() { return nom; }
 
 void Acheteur::show() {
     cout << "L'acheteur " << nom << " habite au " << endl;
-    for (const auto &[k, v] : visites){
-        std::cout << "bien:[" << k << "] = (" << v.first << ", " << v.second << ") " << std::endl;
-    }
     adresse.show();
 }
 
-
-void Acheteur::Avisiter(string nomBien,int prop= 0, int montant=0){
-    visites[nomBien]["Proposition"]=prop;
-    visites[nomBien]["Montant"]=montant;
-
-
+void Acheteur::Avisiter(int ref_catalogue, int prop = 0, int montant = 0) {
+    visites[ref_catalogue].first = prop;
+    visites[ref_catalogue].second = montant;
 }
 
 bool Acheteur::operator<(const Acheteur &other) {
