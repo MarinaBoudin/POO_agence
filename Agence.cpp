@@ -31,25 +31,30 @@ map<string, map<Bien, vector<Acheteur*>>> Agence::get_dico_biens() {
     return dico_biens;
 }
 
-vector<Acheteur> Agence::get_acheteurs(){
+vector<Acheteur*> const& Agence::get_acheteurs() const {
   return acheteurs;
 }
 
-vector<Vendeur> Agence::get_vendeurs(){
+vector<Vendeur> Agence::get_vendeurs() {
   return vendeurs;
 }
 
-void Agence::ajout_acheteur(Acheteur a){
+void Agence::ajout_acheteur(Acheteur* a){
   acheteurs.push_back(a);
+  int taille_a = acheteurs.size();
+    cout << taille_a << endl;
+    for (int k =0;k<taille_a;k++){
+      acheteurs[k]->show();
+    }
 }
 
 void Agence::ajout_vendeur(Vendeur v){
   vendeurs.push_back(v);
 }
 
-void Agence::ajout_bien(string a, Bien b){
-  dico_biens[a][b];
-}
+// void Agence::ajout_bien(string a, Bien b){
+//   dico_biens[a][b];
+// }
 
 // void Agence::recherche_biens(){
 //   cout << "Recherchez vous un appartement(1), une maison(2), un local (3) ou un terrain(4) ?";

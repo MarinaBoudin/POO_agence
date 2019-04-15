@@ -20,7 +20,7 @@ private:
     int get_m2();
     int get_ref_client();
     int get_ref_catalogue();
-    virtual void affiche() =0;
+    void affiche();
     bool operator<(const Bien &b) const {
         return (prix < b.prix);
     }

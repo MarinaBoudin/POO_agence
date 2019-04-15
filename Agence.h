@@ -17,16 +17,16 @@
 class Agence {
   private:
     std::map<std::string, std::map<Bien,std::vector<Acheteur*>>> dico_biens;
-    std::vector<Acheteur> acheteurs;
+    std::vector<Acheteur*> acheteurs;
     std::vector<Vendeur> vendeurs;
   public:
     Agence();
     std::map<std::string, std::map<Bien,std::vector<Acheteur*>>> get_dico_biens();
-    std::vector<Acheteur> get_acheteurs();
+    const std::vector<Acheteur*> & get_acheteurs() const;
     std::vector<Vendeur> get_vendeurs();
-    void ajout_acheteur(Acheteur a);
+    void ajout_acheteur(Acheteur* a);
     void ajout_vendeur(Vendeur v);
-    void ajout_bien(int a, Bien b);
+    // void ajout_bien(int a, Bien b);
     // void recherche_biens();
 };
 

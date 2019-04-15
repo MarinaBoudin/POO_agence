@@ -51,12 +51,12 @@ void creer_client(Agence mon_agence) {
       int type;
       cin >> type;
       if (type==1){
-        Acheteur nouveau_acheteur(name);
-        mon_agence.ajout_acheteur(nouveau_acheteur);
+        Acheteur* acheteur = new Acheteur(name);
+        mon_agence.ajout_acheteur(acheteur);
       }
       else if (type==2){
-        Vendeur nouveau_vendeur(name);
-        mon_agence.ajout_vendeur(nouveau_vendeur);
+        Vendeur vendeur = Vendeur(name);
+        mon_agence.ajout_vendeur(vendeur);
       }
     }
   }
@@ -171,30 +171,31 @@ void menu_print() { //creer une liste avec les propositions de menu
 
 int main() {
     Agence mon_agence;
-    map<string, map<Bien,vector<Acheteur>>> mapp=mon_agence.get_dico_biens();
-    map<string, map<Bien,vector<Acheteur>>>::iterator im;
-    for (im=mapp.begin();im!=mapp.end();im++){
-      cout << im->first << endl;
-    }
-    // map<string,int> mapp;
-    // mapp["c1"]=1;
-    // mapp["c2"]=3;
-    // map<string,int>::iterator im2;
-    // for (im2=mapp.begin();im2!=mapp.end();im2++){
-    //   cout << im2->first << im2->second << endl;
+    // map<string, map<Bien,vector<Acheteur>>> mapp=mon_agence.get_dico_biens();
+    // map<string, map<Bien,vector<Acheteur>>>::iterator im;
+    // for (im=mapp.begin();im!=mapp.end();im++){
+    //   cout << im->first << endl;
     // }
-    // Vendeur bob = Vendeur("Bob");
-    // bob.show();
-    // cout << "Bienvenue dans le gestionnaire d'agence. Que souhaitez-vous faire ?" << endl;
-    // bool run=true;
     bool run=true;
-    while (run!=false){
+    while (run){
       menu_print();
       int choix;
       cin >> choix;
       switch (choix) {
           case 1 :
               creer_client(mon_agence);
+              {
+                vector<Acheteur*> a = mon_agence.get_acheteurs();
+                int taille_a = a.size();
+                cout << taille_a << endl;
+                for (int k =0;k<taille_a;k++){
+                  a[k]->show();
+                }
+              vector<Vendeur> b = mon_agence.get_vendeurs();
+              int taille_b=b.size();
+              for(int i=0;i<taille_b;i++){
+                b[i].show();
+              }}
               break;
           case 2 :
               creer_bien(mon_agence);
@@ -213,8 +214,8 @@ int main() {
               break;
           default :
               cout << "Choix invalide." << endl;
+              break;
       }
     }
-    cout << "sortie" << endl;
     return 0;
 };

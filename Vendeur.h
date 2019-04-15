@@ -9,7 +9,7 @@ class Vendeur : public Client {
 private:
     //TODO : créer une liste de références vers la liste des biens en vente
 public:
-    Vendeur(std::string nom, int id);
+    Vendeur(std::string nom);
 
     ~Vendeur();
 

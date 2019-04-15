@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Acheteur::Acheteur(string nom, int id) : Client(nom, id) {}
+Acheteur::Acheteur(string nom) : Client(nom) {}
 
 Acheteur::~Acheteur() {}
 

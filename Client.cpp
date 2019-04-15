@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Client::Client(string nom, int id) : nom(nom), id_client(id) {
+Client::Client(string nom) : nom(nom) {
     cout << "Veuillez rentrer l'adresse de : " << nom << endl;
     adresse.remplir();
 }

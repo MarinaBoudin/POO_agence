@@ -11,7 +11,7 @@ protected:
     Adresse adresse;
     int id_client;
 public:
-    Client(std::string nom, int id);
+    Client(std::string nom);
 
     ~Client();
 
