@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Vendeur::Vendeur(string nom) : Client(nom) {}
+Vendeur::Vendeur(string nom, int id) : Client(nom, id) {}
 
 Vendeur::~Vendeur() {}
 
