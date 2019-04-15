@@ -15,7 +15,7 @@
 using namespace std;
 
 Agence::Agence(){
-  Bien test = Bien(2,1,65,98);
+  // Bien test = Bien(2,1,65,98);
   // Acheteur lol = Acheteur("bob");
   // map<Bien,vector<Acheteur>> a;
   // vector<Acheteur> poo;
@@ -27,6 +27,22 @@ Agence::Agence(){
   dico_biens["Terrain"];
 }
 
-std::map<std::string, std::map<Bien, std::vector<Acheteur>>> Agence::get_dico_biens() {
+map<string, map<Bien, vector<Acheteur*>>> Agence::get_dico_biens() {
     return dico_biens;
+}
+
+vector<Acheteur> Agence::get_acheteurs(){
+  return acheteurs;
+}
+
+vector<Vendeur> Agence::get_vendeurs(){
+  return vendeurs;
+}
+
+void Agence::ajout_acheteur(Acheteur a){
+  acheteurs.push_back(a);
+}
+
+void Agence::ajout_vendeur(Vendeur v){
+  vendeurs.push_back(v);
 }
