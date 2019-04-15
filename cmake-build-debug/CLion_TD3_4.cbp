@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CLion_TD3_4"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/charlotte/Master/POO/POO_agence/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/charlotte/Master/POO/POO_agence/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="POO_agence">
+				<Option output="/home/charlotte/Master/POO/POO_agence/cmake-build-debug/POO_agence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/charlotte/Master/POO/POO_agence/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 POO_agence"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="POO_agence/fast">
+				<Option output="/home/charlotte/Master/POO/POO_agence/cmake-build-debug/POO_agence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/charlotte/Master/POO/POO_agence/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 POO_agence/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/charlotte/Master/POO/POO_agence/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/charlotte/Master/POO/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Acheteur.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Acheteur.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Adresse.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Adresse.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Agence.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Agence.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Appartement.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Appartement.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Bien.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Bien.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Client.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Client.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Local.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Local.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Maison.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Maison.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Terrain.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Terrain.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Vendeur.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/Vendeur.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/main.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="/home/charlotte/Master/POO/POO_agence/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
