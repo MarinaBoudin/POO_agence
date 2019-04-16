@@ -5,15 +5,21 @@
 #include "Adresse.h"
 #include <iostream>
 
-class Local : public Bien{
-  private:
+class Local : public Bien {
+private:
     float taille_vitrine;
     bool espace_stockage;
-  public:
-    Local(int _prix, int _m2, int _ref_client,float _taille_vitrine, bool _espace_stockage);
+public:
+    Local(int _prix, int _m2, int _ref_client, float _taille_vitrine, bool _espace_stockage);
+
+    Local(Adresse _adresse, int _prix, int _m2, int _ref_client, float _taille_vitrine, bool _espace_stockage);
+
     int get_taille_vitrine();
+
     bool get_espace_stockage();
+
     void affiche();
+
     void recherche();
 };
 

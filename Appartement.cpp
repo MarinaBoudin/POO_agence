@@ -16,6 +16,17 @@ Appartement::Appartement(int _prix, int _m2, int _ref_client,int _pieces,int _et
   nb_appart=_nb_appart;
 }
 
+Appartement::Appartement(Adresse _adresse, int _prix, int _m2, int _ref_client, int _pieces, int _etage, bool _garage,
+                         bool _cave, bool _balcon,
+                         int _nb_appart) : Bien(_adresse, _prix, _m2, _ref_client) {
+    pieces = _pieces;
+    etage = _etage;
+    garage = _garage;
+    cave = _cave;
+    balcon = _balcon;
+    nb_appart = _nb_appart;
+}
+
 int Appartement::get_etage() {
     return etage;
 }

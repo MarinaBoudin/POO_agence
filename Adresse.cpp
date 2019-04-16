@@ -11,6 +11,8 @@ Adresse::Adresse() {
     CP = 0;
 }
 
+Adresse::~Adresse() {}
+
 void Adresse::show() {
     cout << numero << " " << voie << " " << nomVoie << " " << CP << " " << ville << endl;
 }

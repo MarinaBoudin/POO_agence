@@ -14,21 +14,84 @@
 
 using namespace std;
 
-// Méthode de chargement des biens enregistrés sur une ancienne session
-void chargement() {
-
+void lectureAppart(vector<string> res, Agence &agence, Adresse &adresse) {
+    bool garage;
+    istringstream(res[11]) >> garage;
+    bool cave;
+    istringstream(res[12]) >> cave;
+    bool balcon;
+    istringstream(res[13]) >> balcon;
+    Appartement a(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stoi(res[9]), stoi(res[10]), garage,
+                  cave,
+                  balcon, stoi(res[14]));
+    agence.ajout_bien("Appartement", &a);
 }
 
-// Méthode de sauvegarde des biens
-//void sauvegarde(Agence agence) {
-//    vector<Acheteur> acheteurs = agence.get_acheteurs();
-//    for (int i = 0; i < acheteurs.size(); i++) {
-//        acheteurs[i].show();
-//    }
-//
-//}
+void lectureLocal(vector<string> res, Agence &agence, Adresse &adresse) {
+    bool stockage;
+    istringstream(res[10]) >> stockage;
+    Local l(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stof(res[9]), stockage);
+    agence.ajout_bien("Local", &l);
+}
 
-void acheteur_txt(Agence agence) {
+void lectureMaison(vector<string> res, Agence &agence, Adresse &adresse) {
+    bool garage;
+    istringstream(res[10]) >> garage;
+    bool jardin;
+    istringstream(res[11]) >> jardin;
+    bool piscine;
+    istringstream(res[12]) >> piscine;
+    Maison m(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stoi(res[9]), garage, jardin, piscine);
+    agence.ajout_bien("Maison", &m);
+}
+
+void lectureTerrain(vector<string> res, Agence &agence, Adresse &adresse) {
+    bool constructible;
+    istringstream(res[9]) >> constructible;
+    Terrain t(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), constructible);
+    agence.ajout_bien("Terrain", &t);
+}
+
+void bien_txt(Agence &agence) {
+    string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\bien.txt");
+    ifstream ficBiens(nomFic.c_str());  // ouverture en lecture
+    if (ficBiens) {
+        string line;
+        while (getline(ficBiens, line)) {
+            vector<string> res;
+            string sousChaine;
+            istringstream values(line);
+            while (getline(values, sousChaine, ',')) {
+                res.push_back(sousChaine);
+            }
+            Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));
+            //1:Appartement, 2:Local, 3:Maison, 4:Terrain
+            switch (stoi(res[0])) {
+                case 1 :
+                    lectureAppart(res, agence, newAdresse);
+                    break;
+                case 2 :
+                    lectureLocal(res, agence, newAdresse);
+                    break;
+                case 3 :
+                    lectureMaison(res, agence, newAdresse);
+                    break;
+                case 4 :
+                    lectureTerrain(res, agence, newAdresse);
+                    break;
+                default:
+                    cout << "Erreur de lecture de l'indice du fichier" << endl;
+                    break;
+            }
+
+
+        }
+        ficBiens.close();
+    } else
+        cerr << "Impossible d'ouvrir le fichier !" << endl;
+}
+
+void acheteur_txt(Agence &agence) {
     string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\acheteur.txt");
     ifstream ficAcheteurs(nomFic.c_str());  // ouverture en lecture
     if (ficAcheteurs) {
@@ -40,7 +103,7 @@ void acheteur_txt(Agence agence) {
             while (getline(values, sousChaine, ',')) {
                 res.push_back(sousChaine);
             }
-            Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));/*int(res[1]), int(res[4])*/
+            Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));
             Acheteur a(res[0], newAdresse);
             agence.ajout_acheteur(a);
         }
@@ -49,7 +112,7 @@ void acheteur_txt(Agence agence) {
         cerr << "Impossible d'ouvrir le fichier !" << endl;
 }
 
-void vendeur_txt(Agence agence) {
+void vendeur_txt(Agence &agence) {
     string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\vendeur.txt");
     ifstream ficVendeurs(nomFic.c_str());  // ouverture en lecture
     if (ficVendeurs) {
@@ -61,7 +124,7 @@ void vendeur_txt(Agence agence) {
             while (getline(values, sousChaine, ',')) {
                 res.push_back(sousChaine);
             }
-            Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));/*int(res[1]), int(res[4])*/
+            Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));
             Vendeur v(res[0], newAdresse);
             agence.ajout_vendeur(v);
             v.show();
@@ -89,7 +152,7 @@ void client_vmanuelle() {
     }
 }
 
-Agence creer_client(Agence mon_agence) {
+Agence creer_client(Agence &mon_agence) {
     cout << "Comment souhaitez-vous entrez le/les nouveaux clients ? \n1 : Manuellement \n2 : Via un fichier txt"
          << endl;
     int choix;
@@ -272,6 +335,8 @@ Agence creer_bien(Agence mon_agence) {
                 }
             }
         }
+    } else if (choix == 2) {
+        bien_txt(mon_agence);
     }
     return mon_agence;
 }
@@ -299,6 +364,7 @@ void menu_print() { //creer une liste avec les propositions de menu
 
 int main() {
     Agence mon_agence;
+    Agence *ptrAgence = &mon_agence;
     // map<string, map<Bien,vector<Acheteur>>> mapp=mon_agence.get_dico_biens();
     // map<string, map<Bien,vector<Acheteur>>>::iterator im;
     // for (im=mapp.begin();im!=mapp.end();im++){
