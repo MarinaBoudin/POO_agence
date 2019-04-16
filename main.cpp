@@ -20,13 +20,13 @@ void chargement() {
 }
 
 // Méthode de sauvegarde des biens
-void sauvegarde(Agence agence) {
-    vector<Acheteur> acheteurs = agence.get_acheteurs();
-    for (int i = 0; i < acheteurs.size(); i++) {
-        acheteurs[i].show();
-    }
-
-}
+//void sauvegarde(Agence agence) {
+//    vector<Acheteur> acheteurs = agence.get_acheteurs();
+//    for (int i = 0; i < acheteurs.size(); i++) {
+//        acheteurs[i].show();
+//    }
+//
+//}
 
 void acheteur_txt(Agence agence) {
     string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\acheteur.txt");
@@ -39,9 +39,8 @@ void acheteur_txt(Agence agence) {
             istringstream values(line);
             while (getline(values, sousChaine, ',')) {
                 res.push_back(sousChaine);
-                cout << sousChaine << endl;
             }
-            Adresse newAdresse(res[2], res[3], res[5], 0, 0);/*int(res[1]), int(res[4])*/
+            Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));/*int(res[1]), int(res[4])*/
             Acheteur a(res[0], newAdresse);
             agence.ajout_acheteur(a);
         }
@@ -51,7 +50,25 @@ void acheteur_txt(Agence agence) {
 }
 
 void vendeur_txt(Agence agence) {
-
+    string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\vendeur.txt");
+    ifstream ficVendeurs(nomFic.c_str());  // ouverture en lecture
+    if (ficVendeurs) {
+        string line;
+        while (getline(ficVendeurs, line)) {
+            vector<string> res;
+            string sousChaine;
+            istringstream values(line);
+            while (getline(values, sousChaine, ',')) {
+                res.push_back(sousChaine);
+            }
+            Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));/*int(res[1]), int(res[4])*/
+            Vendeur v(res[0], newAdresse);
+            agence.ajout_vendeur(v);
+            v.show();
+        }
+        ficVendeurs.close();
+    } else
+        cerr << "Impossible d'ouvrir le fichier !" << endl;
 }
 
 void client_vmanuelle() {
