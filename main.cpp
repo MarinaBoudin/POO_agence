@@ -35,7 +35,7 @@ void client_txt() {
 }
 
 
-void creer_client(Agence mon_agence) {
+Agence creer_client(Agence mon_agence) {
   cout << "Comment souhaitez-vous entrez le/les nouveaux clients ? \n1 : Manuellement \n2 : Via un fichier txt" << endl;
   int choix;
   cin >> choix;
@@ -58,18 +58,25 @@ void creer_client(Agence mon_agence) {
       }
       else if (type==2){
         Vendeur vendeur = Vendeur(name);
-        mon_agence.ajout_vendeur(vendeur);
         int a= vendeur.get_id();
         cout << "Ref client : " << a << endl;
+        mon_agence.ajout_vendeur(vendeur);
+        // vector<Vendeur> b = mon_agence.get_vendeurs();
+        // int taille_a = b.size();
+        //   cout << taille_a << endl;
+        //   for (int k =0;k<taille_a;k++){
+        //     b[k].show();
+        //   }
       }
     }
   }
   if (choix == 2) {
     client_txt();
   }
+  return mon_agence;
 }
 
-void ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
+Agence ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Combien y a t-il de pièces ? " << endl;
   int _pieces;
   cin >> _pieces;
@@ -106,11 +113,13 @@ void ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Combien y a t-il d'appartement dans l'immeuble ?"<<endl;
   int _nb_appart;
   cin >> _nb_appart;
-  Appartement nouveau_appartement= Appartement(_prix,_m2,ref,_pieces,_etage,_gar,_ca,_ba,_nb_appart);
+  Appartement* nouveau_appartement= new Appartement(_prix,_m2,ref,_pieces,_etage,_gar,_ca,_ba,_nb_appart);
   mon_agence.ajout_bien("Appartement",nouveau_appartement);
+  nouveau_appartement->affiche();
+  return mon_agence;
 }
 
-void ajout_local(Agence mon_agence,int _prix,int _m2,int ref){
+Agence ajout_local(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Quelle est la taille de la vitrine ? " << endl;
   int _taille_vitrine;
   cin >> _taille_vitrine;
@@ -121,11 +130,12 @@ void ajout_local(Agence mon_agence,int _prix,int _m2,int ref){
   if (_espace==1){
     bool _espace_stockage = true;
   }
-  Local nouveau_local= Local(_prix,_m2,ref,_taille_vitrine,_espace_stockage);
+  Local* nouveau_local= new Local(_prix,_m2,ref,_taille_vitrine,_espace_stockage);
   mon_agence.ajout_bien("Local",nouveau_local);
+  return mon_agence;
 }
 
-void ajout_maison(Agence mon_agence,int _prix,int _m2,int ref){
+Agence ajout_maison(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Combien y a t-il de pièces ? " << endl;
   int _pieces;
   cin >> _pieces;
@@ -150,11 +160,12 @@ void ajout_maison(Agence mon_agence,int _prix,int _m2,int ref){
   if (_pi==1){
     _piscine = true;
   }
-  Maison nouveau_maison= Maison(_prix,_m2,ref,_pieces,_garage,_jardin,_piscine);
+  Maison* nouveau_maison= new Maison(_prix,_m2,ref,_pieces,_garage,_jardin,_piscine);
   mon_agence.ajout_bien("Maison",nouveau_maison);
+  return mon_agence;
 }
 
-void ajout_terrain(Agence mon_agence,int _prix,int _m2,int ref){
+Agence ajout_terrain(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Le terrain est-il constructible ? " << endl;
   int _co;
   cin >> _co;
@@ -162,11 +173,12 @@ void ajout_terrain(Agence mon_agence,int _prix,int _m2,int ref){
   if (_co==1){
     _constructible = true;
   }
-  Terrain nouveau_terrain= Terrain(_prix,_m2,ref,_constructible);
+  Terrain* nouveau_terrain= new Terrain(_prix,_m2,ref,_constructible);
   mon_agence.ajout_bien("Terrain",nouveau_terrain);
+  return mon_agence;
 }
 
-void creer_bien(Agence mon_agence) {
+Agence creer_bien(Agence mon_agence) {
   cout << "Comment souhaitez-vous entrez le/les biens ? \n1 : Manuellement\n2 : Via un fichier txt" << endl;
   int choix;
   cin >> choix;
@@ -180,6 +192,7 @@ void creer_bien(Agence mon_agence) {
       cin >> ref;
       vector<Vendeur> vendeurs = mon_agence.get_vendeurs();
       int taille = vendeurs.size();
+      // cout << taille << endl;
       for (int vendeur=0; vendeur<taille;vendeur++){
         int id=vendeurs[vendeur].get_id();
         cout << "id : " << id << endl;
@@ -194,21 +207,22 @@ void creer_bien(Agence mon_agence) {
           int _m2;
           cin >> _m2;
           if (type==1){
-            ajout_appartement(mon_agence,_prix,_m2,ref);
+            mon_agence=ajout_appartement(mon_agence,_prix,_m2,ref);
           }
           else if (type==2){
-            ajout_local(mon_agence,_prix,_m2,ref);
+            mon_agence=ajout_local(mon_agence,_prix,_m2,ref);
           }
           else if (type==3){
-            ajout_maison(mon_agence,_prix,_m2,ref);
+            mon_agence=ajout_maison(mon_agence,_prix,_m2,ref);
           }
           else if (type==4){
-            ajout_terrain(mon_agence,_prix,_m2,ref);
+            mon_agence=ajout_terrain(mon_agence,_prix,_m2,ref);
           }
         }
       }
     }
   }
+  return mon_agence;
 }
 
 void proposition_achat() {
@@ -246,10 +260,10 @@ int main() {
       cin >> choix;
       switch (choix) {
           case 1 :
-              creer_client(mon_agence);
+              mon_agence = creer_client(mon_agence);
               break;
           case 2 :
-              creer_bien(mon_agence);
+              mon_agence = creer_bien(mon_agence);
               break;
           case 3 :
               proposition_achat();

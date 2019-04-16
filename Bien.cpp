@@ -8,6 +8,7 @@ using namespace std;
 int Bien::ref_catalogue=0;
 
 Bien::Bien(int _prix, int _m2, int _ref_client){
+  adresse.remplir();
   prix=_prix;
   m2=_m2;
   ref_client=_ref_client;
