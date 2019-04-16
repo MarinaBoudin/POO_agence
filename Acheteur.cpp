@@ -6,6 +6,8 @@ using namespace std;
 
 Acheteur::Acheteur(string nom) : Client(nom) {}
 
+Acheteur::Acheteur(std::string nom, Adresse _adresse) : Client(nom, _adresse) {}
+
 Acheteur::~Acheteur() {}
 
 string Acheteur::getnom() { return nom; }
@@ -27,3 +29,4 @@ void Acheteur::retirerVisite(int ref_catalogue) {
 bool Acheteur::operator<(const Acheteur &other) {
     return false;
 }
+

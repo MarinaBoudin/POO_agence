@@ -27,3 +27,9 @@ void Adresse::remplir() {
     cout << "Ville : " << endl;
     cin >> ville;
 }
+
+Adresse::Adresse(const string &voie, const string &nomVoie, const string &ville, int numero, int CP) : voie(voie),
+                                                                                                       nomVoie(nomVoie),
+                                                                                                       ville(ville),
+                                                                                                       numero(numero),
+                                                                                                       CP(CP) {}

@@ -13,6 +13,8 @@ protected:
 public:
     Client(std::string nom);
 
+    Client(std::string nom, Adresse _adresse);
+
     ~Client();
 
     static int get_id();

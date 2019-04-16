@@ -4,11 +4,16 @@
 
 using namespace std;
 
-int Client::id_client=0;
+int Client::id_client = 0;
 
 Client::Client(string nom) : nom(nom) {
     cout << "Veuillez rentrer l'adresse de : " << nom << endl;
     adresse.remplir();
+    id_client++;
+}
+
+Client::Client(std::string nom, Adresse _adresse) : nom(nom) {
+    adresse = _adresse;
     id_client++;
 }
 
