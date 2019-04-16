@@ -7,13 +7,14 @@
 
 class Local : public Bien{
   private:
-    int taille_vitrine;
+    float taille_vitrine;
     bool espace_stockage;
   public:
-    Local(int _prix, int _m2, int _ref_client,int _taille_vitrine, bool _espace_stockage);
+    Local(int _prix, int _m2, int _ref_client,float _taille_vitrine, bool _espace_stockage);
     int get_taille_vitrine();
     bool get_espace_stockage();
     void affiche();
+    void recherche();
 };
 
 

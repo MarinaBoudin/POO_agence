@@ -69,41 +69,46 @@ void Agence::recherche_biens(){
   int choixm2;
   cin >> choixm2;
   string type;
-  vector<Bien*> vectorfiltre;
-  if (nb==1){
-    map<Bien*,vector<Acheteur>>::iterator im;
-    for (im=dico_biens["Appartement"].begin();im!=dico_biens["Appartement"].end();im++){
-      Bien* biencible = im->first;
-      biencible->affiche();
-      if (((biencible->get_prix() <= choixprix) || (choixprix==0)) && ((biencible->get_m2() <= choixm2) || (choixm2==0))){
-        vectorfiltre.push_back(biencible);
-      }
-    }
-  }
+  if (nb==1){type="Appartement";}
   else if (nb==2){type="Maison";}
   else if (nb==3){type="Local";}
   else if (nb==4){type="Terrain";}
   else {cout << "Choix non reconnu." << endl;}
-  switch(nb){
-    case 1:
-      // cout << vectorfiltre.size() << endl;
-      for (int i=0; i<vectorfiltre.size();i++){
-        Bien* a = vectorfiltre[i];
-        // a.affiche();
-        a->recherche_appart();
-      }
-      break;
-    case 2:
-      // recherche_maison();
-      break;
-    case 3:
-      // recherche_local();
-      break;
-    case 4:
-      // recherche_terrain();
-      break;
-    default :
-      cout << "Choix non reconnu." << endl;
-      break;
+  vector<Bien*> vectorfiltre;
+  map<Bien*,vector<Acheteur>>::iterator im;
+  for (im=dico_biens[type].begin();im!=dico_biens[type].end();im++){
+    Bien* biencible = im->first;
+    if (((biencible->get_prix() <= choixprix) || (choixprix==0)) && ((biencible->get_m2() <= choixm2) || (choixm2==0))){
+      vectorfiltre.push_back(biencible);
+    }
   }
+  for (int i=0; i<vectorfiltre.size();i++){
+        Bien* a = vectorfiltre[i];
+        a->recherche();
+      }
+  // switch(nb){
+  //   case 1:
+  //     // cout << vectorfiltre.size() << endl;
+  //     for (int i=0; i<vectorfiltre.size();i++){
+  //       Bien* a = vectorfiltre[i];
+  //       a->recherche();
+  //     }
+  //     break;
+  //   case 2:
+  //     for (int i=0; i<vectorfiltre.size();i++){
+  //       Bien* a = vectorfiltre[i];
+  //       a->recherche();
+  //     }
+  //     // recherche_maison();
+  //     break;
+  //   case 3:
+  //     // recherche_local();
+  //     break;
+  //   case 4:
+  //     // recherche_terrain();
+  //     break;
+  //   default :
+  //     cout << "Choix non reconnu." << endl;
+  //     break;
+  // }
 }

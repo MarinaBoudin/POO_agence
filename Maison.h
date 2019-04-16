@@ -18,6 +18,7 @@ private:
     bool get_jardin();
     bool get_piscine();
     void affiche();
+    void recherche();
 };
 
 

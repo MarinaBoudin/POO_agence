@@ -21,7 +21,7 @@ private:
     int get_ref_client();
     static int get_ref_catalogue();
     virtual void affiche();
-    virtual void recherche_appart();
+    virtual void recherche();
     // virtual void recherche_maison();
     // virtual void recherche_terrain();
     // virtual void recherche_local();

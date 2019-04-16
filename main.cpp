@@ -61,12 +61,6 @@ Agence creer_client(Agence mon_agence) {
         int a= vendeur.get_id();
         cout << "Ref client : " << a << endl;
         mon_agence.ajout_vendeur(vendeur);
-        // vector<Vendeur> b = mon_agence.get_vendeurs();
-        // int taille_a = b.size();
-        //   cout << taille_a << endl;
-        //   for (int k =0;k<taille_a;k++){
-        //     b[k].show();
-        //   }
       }
     }
   }
@@ -83,7 +77,7 @@ Agence ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Quel est l'étage où se trouve l'appartement ?" << endl;
   int _etage;
   cin >> _etage;
-  cout << "Y a t-il un garage ? \n1 : Oui\n2:Non"<<endl;
+  cout << "Y a t-il un garage ? \n1 : Oui\n2 : Non"<<endl;
   int _gar;
   cin >> _gar;
   if (_gar==1){
@@ -92,7 +86,7 @@ Agence ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
   else if (_gar==2){
     bool _garage = false;
   }
-  cout << "Y a t-il une cave ? \n1 : Oui\n2:Non"<<endl;
+  cout << "Y a t-il une cave ? \n1 : Oui\n2 : Non"<<endl;
   int _ca;
   cin >> _ca;
   if (_ca==1){
@@ -101,7 +95,7 @@ Agence ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
   else if (_ca==2){
     bool _cave = false;
   }
-  cout << "Y a t-il une balcon ? \n1 : Oui\n2:Non"<<endl;
+  cout << "Y a t-il une balcon ? \n1 : Oui\n2 : Non"<<endl;
   int _ba;
   cin >> _ba;
   if (_ba==1){
@@ -121,9 +115,9 @@ Agence ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
 
 Agence ajout_local(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Quelle est la taille de la vitrine ? " << endl;
-  int _taille_vitrine;
+  float _taille_vitrine;
   cin >> _taille_vitrine;
-  cout << "Y a t-il un espace de stockage ? \n1 : Oui\n2:Non"<<endl;
+  cout << "Y a t-il un espace de stockage ? \n1 : Oui\n2 : Non"<<endl;
   int _espace;
   cin >> _espace;
   bool _espace_stockage=false;
@@ -139,21 +133,21 @@ Agence ajout_maison(Agence mon_agence,int _prix,int _m2,int ref){
   cout << "Combien y a t-il de pièces ? " << endl;
   int _pieces;
   cin >> _pieces;
-  cout << "Y a t-il un garage ? \n1 : Oui\n2:Non"<<endl;
+  cout << "Y a t-il un garage ? \n1 : Oui\n2 : Non"<<endl;
   int _gar;
   cin >> _gar;
   bool _garage=false;
   if (_gar==1){
     _garage = true;
   }
-  cout << "Y a t-il un jardin ? \n1 : Oui\n2:Non"<<endl;
+  cout << "Y a t-il un jardin ? \n1 : Oui\n2 : Non"<<endl;
   int _ja;
   cin >> _ja;
   bool _jardin=false;
   if (_ja==1){
     _jardin = true;
   }
-  cout << "Y a t-il une piscine ? \n1 : Oui\n2:Non"<<endl;
+  cout << "Y a t-il une piscine ? \n1 : Oui\n2 : Non"<<endl;
   int _pi;
   cin >> _pi;
   bool _piscine=false;
@@ -166,7 +160,7 @@ Agence ajout_maison(Agence mon_agence,int _prix,int _m2,int ref){
 }
 
 Agence ajout_terrain(Agence mon_agence,int _prix,int _m2,int ref){
-  cout << "Le terrain est-il constructible ? " << endl;
+  cout << "Le terrain est-il constructible ? \n1 : Oui\n2 : Non" << endl;
   int _co;
   cin >> _co;
   bool _constructible=false;

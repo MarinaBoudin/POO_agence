@@ -52,19 +52,22 @@ void Appartement::affiche(){
 }
 
 
-void Appartement::recherche_appart(){
+void Appartement::recherche(){
   cout << "PIECES -> Entrez le nombre de pièces minimales :" << endl;
   int choixpieces;
   cin >> choixpieces;
-  cout << "BALCON -> Oui(2) ou Non(1)" << endl;
+  cout << "BALCON -> Oui(1) ou Non(2)" << endl;
   int choixbalcon;
   cin >> choixbalcon;
   // map<Bien,vector<Acheteur>>::iterator im;
   // for (im=dico_biens["Appartement"].begin();im!=dico_biens["Appartement"].end();im++){
   //   Bien biencible = im->first;
+  cout << " Ci-dessous, la liste des biens correspondant à votre recherche :\n" << endl;
   if ((pieces <= choixpieces) || (choixpieces==0)){
-    if ((choixbalcon==0) || ((choixbalcon==2) && (balcon==true))){
+    if ((choixbalcon==0) || ((choixbalcon==1) && (balcon==true))){
+      cout << "### 1. ###\n" << endl;
       affiche();
+      cout << "\n" << endl;
     }
   }
 }

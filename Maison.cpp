@@ -39,3 +39,26 @@ void Maison::affiche(){
     cout << "Présence d'une piscine." << endl;
   }
 }
+
+void Maison::recherche(){
+  cout << "PIECES -> Entrez le nombre de pièces minimales :" << endl;
+  int choixpieces;
+  cin >> choixpieces;
+  cout << "GARAGE -> Oui(1) ou Non(2)" << endl;
+  int choixgarage;
+  cin >> choixgarage;
+  cout << "PISCINE -> Oui(1) ou Non(2)" << endl;
+  int choixpiscine;
+  cin >> choixpiscine;
+  cout << "JARDIN -> Oui(1) ou Non(2)" << endl;
+  int choixjardin;
+  cin >> choixjardin;
+  cout << " Ci-dessous, la liste des biens correspondant à votre recherche :\n" << endl;
+  if ((piece <= choixpieces) || (choixpieces==0)){
+    if (((choixgarage==0) || ((choixgarage==1) && (garage==true))) && ((choixpiscine==0) || ((choixpiscine==1) && (piscine==true))) && ((choixjardin==0) || ((choixjardin==1) && (jardin==true)))){
+      cout << "### 1. ###\n" << endl;
+      affiche();
+      cout << "\n" << endl;
+    }
+  }
+}

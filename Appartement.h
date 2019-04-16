@@ -22,7 +22,7 @@ private:
     bool get_balcon();
     int get_nb_appart();
     void affiche();
-    void recherche_appart();
+    void recherche();
 };
 
 
