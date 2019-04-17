@@ -5,25 +5,16 @@
 
 using namespace std;
 
-int Bien::ref_catalogue = 0;
+int Bien::id_bien=0;
 
-Bien::Bien(int _prix, int _m2, int _ref_client) {
-    adresse.remplir();
-    prix = _prix;
-    m2 = _m2;
-    ref_client = _ref_client;
-    ref_catalogue++;
+Bien::Bien(int _prix, int _m2, int _ref_client){
+  adresse.remplir();
+  prix=_prix;
+  m2=_m2;
+  ref_client=_ref_client;
+  id_bien++;
+  ref_catalogue=id_bien;
 }
-
-Bien::Bien(Adresse _adresse, int _prix, int _m2, int _ref_client) {
-    adresse = _adresse;
-    prix = _prix;
-    m2 = _m2;
-    ref_client = _ref_client;
-    ref_catalogue++;
-}
-
-Bien::~Bien() {}
 
 int Bien::get_prix() {
     return prix;
@@ -44,15 +35,14 @@ int Bien::get_ref_client() {
 int Bien::get_ref_catalogue() {
     return ref_catalogue;
 }
-
-void Bien::affiche() {
-    cout << "Prix : " << prix << endl;
-    cout << "Adresse : ";
-    adresse.show();
-    cout << "\n";
-    cout << "Nombre de m² : " << m2 << endl;
-    cout << "Référence client : " << ref_client << endl;
-    cout << "Référence catalogue : " << ref_catalogue << endl;
+void Bien::affiche(){
+  cout << "Prix : " << prix << endl;
+  cout << "Adresse : " ;
+  adresse.show() ;
+  cout << "\n";
+  cout << "Nombre de m² : " << m2 << endl;
+  cout << "Référence client : " << ref_client << endl;
+  cout << "Référence catalogue : " << ref_catalogue << endl;
 }
 
-void Bien::recherche() {}
+void Bien::recherche(){}

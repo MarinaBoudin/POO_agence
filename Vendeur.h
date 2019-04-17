@@ -13,8 +13,6 @@ private:
 public:
     Vendeur(std::string nom);
 
-    Vendeur(std::string nom, Adresse _adresse);
-
     ~Vendeur();
 
     void show();

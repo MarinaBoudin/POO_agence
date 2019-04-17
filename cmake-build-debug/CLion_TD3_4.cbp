@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CLion_TD3_4"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="POO_agence">
+				<Option output="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/POO_agence.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 POO_agence"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="POO_agence/fast">
+				<Option output="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/POO_agence.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 POO_agence/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Acheteur.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Acheteur.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Agence.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Agence.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Appartement.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Appartement.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Client.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Client.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Local.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Local.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Maison.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Maison.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Terrain.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Terrain.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Vendeur.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Vendeur.h">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/main.cpp">
+			<Option target="POO_agence"/>
+		</Unit>
+		<Unit filename="C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

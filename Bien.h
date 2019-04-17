@@ -12,28 +12,17 @@ private:
     Adresse adresse;
     int m2;
     int ref_client;
-    static int ref_catalogue;
-public:
+    static int id_bien;
+    int ref_catalogue;
+  public:
     Bien(int _prix, int _m2, int _ref_client);
-
-    Bien(Adresse _adresse, int _prix, int _m2, int _ref_client);
-
-    virtual ~Bien();
-
     int get_prix();
-
     Adresse get_adresse();
-
     int get_m2();
-
     int get_ref_client();
-
-    static int get_ref_catalogue();
-
+    int get_ref_catalogue();
     virtual void affiche();
-
     virtual void recherche();
-
     // virtual void recherche_maison();
     // virtual void recherche_terrain();
     // virtual void recherche_local();
