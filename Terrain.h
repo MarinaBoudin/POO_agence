@@ -9,7 +9,6 @@ class Terrain : public Bien{
   private:
     bool constructible;
   public:
-    Terrain(int _prix, int _m2, int _ref_client,bool _constructible);
     Terrain(Adresse _adresse, int _prix, int _m2, int _ref_client, bool _constructible);
     bool get_constructible();
     void affiche();

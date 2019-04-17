@@ -15,7 +15,6 @@ private:
     static int id_bien;
     int ref_catalogue;
   public:
-    Bien(int _prix, int _m2, int _ref_client);
     Bien(Adresse _adresse, int _prix, int _m2, int _ref_client);
     virtual ~Bien();
     int get_prix();

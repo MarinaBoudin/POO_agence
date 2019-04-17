@@ -32,10 +32,10 @@ class Agence {
     void acheteur_txt();
     void vendeur_txt();
     void creer_client();
-    void ajout_appartement(int _prix,int _m2,int ref);
-    void ajout_local(int _prix,int _m2,int ref);
-    void ajout_maison(int _prix,int _m2,int ref);
-    void ajout_terrain(int _prix,int _m2,int ref);
+    void ajout_appartement(Adresse _adresse,int _prix,int _m2,int ref);
+    void ajout_local(Adresse _adresse,int _prix,int _m2,int ref);
+    void ajout_maison(Adresse _adresse,int _prix,int _m2,int ref);
+    void ajout_terrain(Adresse _adresse,int _prix,int _m2,int ref);
     void creer_bien();
     void ajout_acheteur(Acheteur& a);
     void ajout_vendeur(Vendeur& v);

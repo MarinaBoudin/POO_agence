@@ -4,10 +4,6 @@
 #include <iostream>
 using namespace std;
 
-Terrain::Terrain(int _prix, int _m2, int _ref_client,bool _constructible):Bien(_prix, _m2, _ref_client){
-  constructible=_constructible;
-}
-
 Terrain::Terrain(Adresse _adresse, int _prix, int _m2, int _ref_client, bool _constructible) : Bien(_adresse, _prix,
                                                                                                     _m2, _ref_client) {
     constructible = _constructible;

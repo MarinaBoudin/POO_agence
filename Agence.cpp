@@ -207,7 +207,7 @@ void Agence::creer_client() {
   }
 }
 
-void Agence::ajout_appartement(int _prix,int _m2,int ref){
+void Agence::ajout_appartement(Adresse _adresse,int _prix,int _m2,int ref){
   cout << "Combien y a t-il de pièces ? " << endl;
   int _pieces;
   cin >> _pieces;
@@ -244,12 +244,12 @@ void Agence::ajout_appartement(int _prix,int _m2,int ref){
   cout << "Combien y a t-il d'appartement dans l'immeuble ?"<<endl;
   int _nb_appart;
   cin >> _nb_appart;
-  Appartement* nouveau_appartement= new Appartement(_prix,_m2,ref,_pieces,_etage,_gar,_ca,_ba,_nb_appart);
+  Appartement* nouveau_appartement= new Appartement(_adresse,_prix,_m2,ref,_pieces,_etage,_gar,_ca,_ba,_nb_appart);
   ajout_bien("Appartement",nouveau_appartement);
   nouveau_appartement->affiche();
 }
 
-void Agence::ajout_local(int _prix,int _m2,int ref){
+void Agence::ajout_local(Adresse _adresse,int _prix,int _m2,int ref){
   cout << "Quelle est la taille de la vitrine ? " << endl;
   float _taille_vitrine;
   cin >> _taille_vitrine;
@@ -260,11 +260,11 @@ void Agence::ajout_local(int _prix,int _m2,int ref){
   if (_espace==1){
     bool _espace_stockage = true;
   }
-  Local* nouveau_local= new Local(_prix,_m2,ref,_taille_vitrine,_espace_stockage);
+  Local* nouveau_local= new Local(_adresse,_prix,_m2,ref,_taille_vitrine,_espace_stockage);
   ajout_bien("Local",nouveau_local);
 }
 
-void Agence::ajout_maison(int _prix,int _m2,int ref){
+void Agence::ajout_maison(Adresse _adresse,int _prix,int _m2,int ref){
   cout << "Combien y a t-il de pièces ? " << endl;
   int _pieces;
   cin >> _pieces;
@@ -289,11 +289,11 @@ void Agence::ajout_maison(int _prix,int _m2,int ref){
   if (_pi==1){
     _piscine = true;
   }
-  Maison* nouveau_maison= new Maison(_prix,_m2,ref,_pieces,_garage,_jardin,_piscine);
+  Maison* nouveau_maison= new Maison(_adresse,_prix,_m2,ref,_pieces,_garage,_jardin,_piscine);
   ajout_bien("Maison",nouveau_maison);
 }
 
-void Agence::ajout_terrain(int _prix,int _m2,int ref){
+void Agence::ajout_terrain(Adresse _adresse,int _prix,int _m2,int ref){
   cout << "Le terrain est-il constructible ? \n1 : Oui\n2 : Non" << endl;
   int _co;
   cin >> _co;
@@ -301,7 +301,7 @@ void Agence::ajout_terrain(int _prix,int _m2,int ref){
   if (_co==1){
     _constructible = true;
   }
-  Terrain* nouveau_terrain= new Terrain(_prix,_m2,ref,_constructible);
+  Terrain* nouveau_terrain= new Terrain(_adresse,_prix,_m2,ref,_constructible);
   ajout_bien("Terrain",nouveau_terrain);
 }
 
@@ -331,17 +331,19 @@ void Agence::creer_bien() {
           cout << "Combien y a t-il de mêtres carré ? " << endl;
           int _m2;
           cin >> _m2;
+          Adresse _adresse;
+          _adresse.remplir();
           if (type==1){
-            ajout_appartement(_prix,_m2,ref);
+            ajout_appartement(_adresse,_prix,_m2,ref);
           }
           else if (type==2){
-            ajout_local(_prix,_m2,ref);
+            ajout_local(_adresse,_prix,_m2,ref);
           }
           else if (type==3){
-            ajout_maison(_prix,_m2,ref);
+            ajout_maison(_adresse,_prix,_m2,ref);
           }
           else if (type==4){
-            ajout_terrain(_prix,_m2,ref);
+            ajout_terrain(_adresse,_prix,_m2,ref);
           }
         }
       }
