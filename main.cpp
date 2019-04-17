@@ -65,7 +65,7 @@ int main() {
               mon_agence.recherche_biens();
               break;
           case 5 :
-              contrats();
+              mon_agence.contrats();
               break;
           case 0 :
               return run = false;

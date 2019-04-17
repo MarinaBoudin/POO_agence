@@ -42,6 +42,7 @@ class Agence {
     void ajout_bien(std::string a, Bien* b);
     void recherche_biens();
     void proposition_achat();
+    void contrats();
 };
 
 

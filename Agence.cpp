@@ -67,6 +67,7 @@ void Agence::lectureMaison(vector<string> res, Adresse &adresse) {
     bool piscine;
     istringstream(res[12]) >> piscine;
     Maison m(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stoi(res[9]), garage, jardin, piscine);
+    cout << "coucou" << m.get_ref_catalogue()<< endl;
     ajout_bien("Maison", &m);
 }
 
@@ -369,6 +370,16 @@ void Agence::ajout_vendeur(Vendeur& v){
 void Agence::ajout_bien(string a, Bien* b){
   dico_biens[a][b];
   b->affiche();
+  int refvendeur = b->get_ref_client();
+  cout << refvendeur << endl;
+  for (int i=0;i<vendeurs.size();i++){
+    cout << "CACA" << endl;
+    if (vendeurs[i].get_ref_client()==refvendeur){
+      cout << "JE SUIS DANS LA BOUCLE CACA " << endl;
+      vendeurs[i].push_bien(b);
+    }
+  }
+
   int ref = b->get_ref_catalogue();
   cout << "La ref catalogue est "<<ref<<endl;
 }
@@ -413,10 +424,10 @@ void Agence::proposition_achat(){
   else if (type==2){typebien="Maison";}
   else if (type==3){typebien="Local";}
   else if (type==4){typebien="Terrain";}
-  cout << "Quelle-est la référence catalogue du bien souhaité ?" << endl;
+  cout << "Quelle est la référence catalogue du bien souhaité ?" << endl;
   int refbien;
   cin >> refbien;
-  cout << "Quelle-est la référence du client ACHETEUR ?" << endl;
+  cout << "Quelle est la référence du client ACHETEUR ?" << endl;
   int refacheteur;
   cin >> refacheteur;
   cout << "Quel prix proposez-vous pour ce bien ?" << endl;
@@ -432,9 +443,7 @@ void Agence::proposition_achat(){
   Bien* biencible;
   acheteurcible.Avisiter(refbien,1,prixpropo);
   map<Bien*,vector<Acheteur>>::iterator im;
-  cout << typebien << endl;
   for (im=dico_biens[typebien].begin();im!=dico_biens[typebien].end();im++){
-    cout << "MDRRRRRRRRRRR" << endl;
     bien = im->first;
     if (bien->get_ref_catalogue() == refbien){
       biencible = bien;
@@ -449,5 +458,72 @@ void Agence::proposition_achat(){
   // for (int i=0; i<test.size();i++){
   //   test[i].show();
   //   test[i].affiche_visites(refbien);
+}
+
+void Agence::contrats(){
+  cout << "Quelle est la référence du client vendeur ?" << endl;
+  int refv;
+  cin >> refv;
+  cout << "Quel type de bien est-ce ? Appartemment(1), Local(2), Maison(3) ou Terrain(4)" << endl;
+  string typebien;
+  int typeb;
+  cin >> typeb;
+  if (typeb==1){typebien="Appartement";}
+  else if (typeb==2){typebien="Local";}
+  else if (typeb==3){typebien="Maison";}
+  else if (typeb==4){typebien="Terrain";}
+  cout << "Quelle est la référence catalogue du bien souhaité ?" << endl;
+  int refb;
+  cin >> refb;
+  Vendeur tmp;
+  for (int i=0; i<vendeurs.size();i++){
+    if (vendeurs[i].get_ref_client()==refv){
+      tmp = vendeurs[i];
+    }
   }
+  Bien* tmpb;
+  vector<Bien*> listBiens = tmp.get_listBiens();
+  // cout << listBiens.size() << endl;
+  for (int j=0;j<listBiens.size();j++){
+    if (listBiens[j]->get_ref_catalogue()==refb){
+      tmpb = listBiens[j];
+    }
+  }
+  vector<Acheteur> listacheteurs = dico_biens[typebien][tmpb];
+  cout << "Liste des propositions pour ce bien (avec référence client acheteur) :" << endl;
+  for (int k=0;k<listacheteurs.size(); k++){
+    map<int, pair<int, int>> visites = listacheteurs[k].get_visites();
+    map<int, pair<int, int>>::iterator im;
+    for (im=visites.begin();im!=visites.end();im++){
+      int refc = im->first;
+      if (refc == refb){
+        pair<int, int> propo = im->second;
+        if (propo.first==1){
+          int prix = propo.second;
+          listacheteurs[k].show();
+          cout << "Prix proposé : " << prix << "\n######" << endl;
+        }
+      }
+    }
+  }
+  cout << "Retenez-vous une des propositions de vente ? Oui(1) ou Non(2)" << endl;
+  int choix;
+  cin >> choix;
+  int choixa;
+  if (choix==1){
+    cout << "Entrez l'ID du client acheteur souhaité :" << endl;
+    cin >> choixa;
+  }
+  tmp.retirer_vente(tmpb);
+  for (int k=0;k<listacheteurs.size(); k++){
+    map<int, pair<int, int>> visites = listacheteurs[k].get_visites();
+    map<int, pair<int, int>>::iterator im;
+    for (im=visites.begin();im!=visites.end();im++){
+      int refc = im->first;
+      if (refc == refb){
+        visites.erase(refc);
+      }
+    }
+  }
+  dico_biens[typebien].erase(tmpb);
 }

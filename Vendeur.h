@@ -11,6 +11,8 @@ class Vendeur : public Client {
 private:
     std::vector<Bien *> listBiens;
 public:
+    Vendeur();
+
     Vendeur(std::string nom);
 
     Vendeur(std::string nom, Adresse _adresse);
@@ -19,11 +21,16 @@ public:
 
     void show();
 
+    std::vector<Bien*> get_listBiens();
+
     std::string getnom();
 
     void ajouter_vente(Bien *b);
 
     void retirer_vente(Bien *b);
+
+    void push_bien(Bien* b);
+
 };
 
 

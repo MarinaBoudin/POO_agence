@@ -20,6 +20,10 @@ void Acheteur::show() {
     cout << " Id : " << ref_client << endl;
 }
 
+map<int, pair<int, int>> Acheteur::get_visites(){
+  return visites;
+}
+
 void Acheteur::Avisiter(int ref_catalogue, int prop = 0, int montant = 0) {
     visites[ref_catalogue].first = prop;
     visites[ref_catalogue].second = montant;

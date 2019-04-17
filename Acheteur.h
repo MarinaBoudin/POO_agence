@@ -21,6 +21,8 @@ public:
 
     std::string getnom();
 
+    std::map<int, std::pair<int, int>> get_visites();
+
     void Avisiter(int ref_catalogue, int prop, int montant);
 
     void retirerVisite(int ref_catalogue);
