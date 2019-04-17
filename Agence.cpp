@@ -410,9 +410,9 @@ void Agence::proposition_achat(){
   cin >> type;
   string typebien;
   if (type==1){typebien="Appartement";}
-  else if (type==2){typebien=="Maison";}
-  else if (type==3){typebien=="Local";}
-  else if (type==4){typebien=="Terrain";}
+  else if (type==2){typebien="Maison";}
+  else if (type==3){typebien="Local";}
+  else if (type==4){typebien="Terrain";}
   cout << "Quelle-est la référence catalogue du bien souhaité ?" << endl;
   int refbien;
   cin >> refbien;
@@ -428,24 +428,26 @@ void Agence::proposition_achat(){
       acheteurcible = acheteurs[i];
     }
   }
+  Bien* bien;
   Bien* biencible;
   acheteurcible.Avisiter(refbien,1,prixpropo);
   map<Bien*,vector<Acheteur>>::iterator im;
+  cout << typebien << endl;
   for (im=dico_biens[typebien].begin();im!=dico_biens[typebien].end();im++){
-    // CETTE BOUCLE DE FONCTIONNE PAS, POURQUOIIIIIIIII
     cout << "MDRRRRRRRRRRR" << endl;
-    Bien* biencible = im->first;
-    if (biencible->get_ref_catalogue() == refbien){
-      vector <Acheteur> offre = dico_biens[typebien][biencible];
-      offre.push_back(acheteurcible);
+    bien = im->first;
+    if (bien->get_ref_catalogue() == refbien){
+      biencible = bien;
+      dico_biens[typebien][biencible].push_back(acheteurcible);
     }
   }
   //test d'affichage
-  vector<Acheteur> test;
-  test = dico_biens[typebien][biencible];
-  for (int i=0; i<test.size();i++){
-    acheteurs[i].show();
-    acheteurs[i].affiche_visites(refbien);
+  // vector<Acheteur> test;
+  // biencible->affiche();
+  // test = dico_biens[typebien][biencible];
+  // cout << test.size() << endl;
+  // for (int i=0; i<test.size();i++){
+  //   test[i].show();
+  //   test[i].affiche_visites(refbien);
   }
-  //
 }
