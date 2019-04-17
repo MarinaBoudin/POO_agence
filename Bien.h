@@ -24,9 +24,6 @@ private:
     int get_ref_catalogue();
     virtual void affiche();
     virtual void recherche();
-    // virtual void recherche_maison();
-    // virtual void recherche_terrain();
-    // virtual void recherche_local();
     bool operator<(const Bien &b) const {
         return (prix < b.prix);
     }

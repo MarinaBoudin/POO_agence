@@ -28,7 +28,7 @@ void Terrain::recherche(){
   cin >> choixconstru;
   cout << " Ci-dessous, la liste des biens correspondant à votre recherche :\n" << endl;
   if ((choixconstru==0) || ((choixconstru==1) && (constructible==true))) {
-    cout << "### 1. ###\n" << endl;
+    cout << "\n#######\n" << endl;
     affiche();
     cout << "\n" << endl;
   }

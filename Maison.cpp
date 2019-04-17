@@ -57,7 +57,7 @@ void Maison::recherche(){
   cout << " Ci-dessous, la liste des biens correspondant à votre recherche :\n" << endl;
   if ((piece <= choixpieces) || (choixpieces==0)){
     if (((choixgarage==0) || ((choixgarage==1) && (garage==true))) && ((choixpiscine==0) || ((choixpiscine==1) && (piscine==true))) && ((choixjardin==0) || ((choixjardin==1) && (jardin==true)))){
-      cout << "### 1. ###\n" << endl;
+      cout << "\n#######\n" << endl;
       affiche();
       cout << "\n" << endl;
     }

@@ -29,10 +29,6 @@ void Acheteur::Avisiter(int ref_catalogue, int prop = 0, int montant = 0) {
     visites[ref_catalogue].second = montant;
 }
 
-void Acheteur::retirerVisite(int ref_catalogue) {
-    //Retirer une visite si elle a été faite mais que le bien est vendu
-}
-
 bool Acheteur::operator<(const Acheteur &other) {
     return false;
 }

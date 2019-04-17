@@ -14,23 +14,7 @@
 
 using namespace std;
 
-
-
-
-
-void proposition_achat() {
-
-}
-
-void affichage_biens() {
-
-}
-
-void contrats() {
-
-}
-
-void menu_print() { //creer une liste avec les propositions de menu
+void menu_print() {
     cout << "1- Créer un ou plusieurs client(s) acheteur(s) et/ou vendeur(s)." << endl;
     cout << "2- Enregistrement d'un bien." << endl;
     cout << "3- Enregistrement d'une proposition d'achat à un client." << endl;
@@ -41,11 +25,6 @@ void menu_print() { //creer une liste avec les propositions de menu
 
 int main() {
     Agence mon_agence;
-    // map<string, map<Bien,vector<Acheteur>>> mapp=mon_agence.get_dico_biens();
-    // map<string, map<Bien,vector<Acheteur>>>::iterator im;
-    // for (im=mapp.begin();im!=mapp.end();im++){
-    //   cout << im->first << endl;
-    // }
     bool run=true;
     while (run){
       menu_print();

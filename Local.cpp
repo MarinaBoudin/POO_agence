@@ -34,7 +34,7 @@ void Local::recherche(){
   cout << " Ci-dessous, la liste des biens correspondant à votre recherche :\n" << endl;
   if ((taille_vitrine <= choixvitrine) || (choixvitrine==0)){
     if ((choixstockage==0) || ((choixstockage==1) && (espace_stockage==true))) {
-      cout << "### 1. ###\n" << endl;
+      cout << "\n#######\n" << endl;
       affiche();
       cout << "\n" << endl;
     }

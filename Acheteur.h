@@ -25,8 +25,6 @@ public:
 
     void Avisiter(int ref_catalogue, int prop, int montant);
 
-    void retirerVisite(int ref_catalogue);
-
     void affiche_visites(int ref);
 
     bool operator<(const Acheteur& other);
