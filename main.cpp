@@ -93,28 +93,6 @@ Agence ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
   }
   else if (_gar==2){
     bool _garage = false;
-<<<<<<< HEAD
-    if (_gar == 1) {
-        _garage = true;
-    }
-    cout << "Y a t-il un jardin ? \n1 : Oui\n2 : Non" << endl;
-    int _ja;
-    cin >> _ja;
-    bool _jardin = false;
-    if (_ja == 1) {
-        _jardin = true;
-    }
-    cout << "Y a t-il une piscine ? \n1 : Oui\n2 : Non" << endl;
-    int _pi;
-    cin >> _pi;
-    bool _piscine = false;
-    if (_pi == 1) {
-        _piscine = true;
-    }
-    Maison *nouvelle_maison = new Maison(_prix, _m2, ref, _pieces, _garage, _jardin, _piscine);
-    mon_agence.ajout_bien("Maison", nouvelle_maison);
-    return mon_agence;
-=======
   }
   cout << "Y a t-il une cave ? \n1 : Oui\n2 : Non"<<endl;
   int _ca;
@@ -141,7 +119,6 @@ Agence ajout_appartement(Agence mon_agence,int _prix,int _m2,int ref){
   mon_agence.ajout_bien("Appartement",nouveau_appartement);
   nouveau_appartement->affiche();
   return mon_agence;
->>>>>>> fcc4ac67207b344d30b3c16af8d6a584f8eb031d
 }
 
 Agence ajout_local(Agence mon_agence,int _prix,int _m2,int ref){
