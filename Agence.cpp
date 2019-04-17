@@ -17,10 +17,6 @@
 using namespace std;
 
 Agence::Agence(){
-  // map<Appartement*, vector<Acheteur>> a;
-  // // map<Maison, vector<Acheteur>> b;
-  // // map<Local, vector<Acheteur>> c;
-  // // map<Terrain, vector<Acheteur>> d;
   dico_biens["Appartement"];
   dico_biens["Maison"];
   dico_biens["Local"];
@@ -67,7 +63,6 @@ void Agence::lectureMaison(vector<string> res, Adresse &adresse) {
     bool piscine;
     istringstream(res[12]) >> piscine;
     Maison m(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stoi(res[9]), garage, jardin, piscine);
-    cout << "coucou" << m.get_ref_catalogue()<< endl;
     ajout_bien("Maison", &m);
 }
 
@@ -153,7 +148,6 @@ void Agence::vendeur_txt() {
             Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));
             Vendeur v(res[0], newAdresse);
             ajout_vendeur(v);
-            v.show();
         }
         ficVendeurs.close();
     } else
@@ -246,7 +240,6 @@ void Agence::ajout_appartement(Adresse _adresse,int _prix,int _m2,int ref){
   cin >> _nb_appart;
   Appartement* nouveau_appartement= new Appartement(_adresse,_prix,_m2,ref,_pieces,_etage,_gar,_ca,_ba,_nb_appart);
   ajout_bien("Appartement",nouveau_appartement);
-  nouveau_appartement->affiche();
 }
 
 void Agence::ajout_local(Adresse _adresse,int _prix,int _m2,int ref){
@@ -358,11 +351,6 @@ void Agence::creer_bien() {
 
 void Agence::ajout_acheteur(Acheteur& a){
   acheteurs.push_back(a);
-  // int taille_a = acheteurs.size();
-  //   cout << taille_a << endl;
-  //   for (int k =0;k<taille_a;k++){
-  //     acheteurs[k].show();
-  //   }
 }
 
 void Agence::ajout_vendeur(Vendeur& v){
@@ -371,19 +359,13 @@ void Agence::ajout_vendeur(Vendeur& v){
 
 void Agence::ajout_bien(string a, Bien* b){
   dico_biens[a][b];
-  b->affiche();
   int refvendeur = b->get_ref_client();
-  cout << refvendeur << endl;
   for (int i=0;i<vendeurs.size();i++){
-    cout << "CACA" << endl;
     if (vendeurs[i].get_ref_client()==refvendeur){
-      cout << "JE SUIS DANS LA BOUCLE CACA " << endl;
       vendeurs[i].push_bien(b);
     }
   }
-
-  int ref = b->get_ref_catalogue();
-  cout << "La ref catalogue est "<<ref<<endl;
+  b->affiche();
 }
 
 void Agence::recherche_biens(){
@@ -452,14 +434,6 @@ void Agence::proposition_achat(){
       dico_biens[typebien][biencible].push_back(acheteurcible);
     }
   }
-  //test d'affichage
-  // vector<Acheteur> test;
-  // biencible->affiche();
-  // test = dico_biens[typebien][biencible];
-  // cout << test.size() << endl;
-  // for (int i=0; i<test.size();i++){
-  //   test[i].show();
-  //   test[i].affiche_visites(refbien);
 }
 
 void Agence::contrats(){
@@ -485,7 +459,6 @@ void Agence::contrats(){
   }
   Bien* tmpb;
   vector<Bien*> listBiens = tmp.get_listBiens();
-  // cout << listBiens.size() << endl;
   for (int j=0;j<listBiens.size();j++){
     if (listBiens[j]->get_ref_catalogue()==refb){
       tmpb = listBiens[j];

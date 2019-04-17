@@ -13,6 +13,7 @@ bool Terrain::get_constructible(){
   return constructible;
 }
 void Terrain::affiche(){
+  cout << "Type : TERRAIN" << endl;
   Bien::affiche();
   if (constructible==true){
     cout << "Constructible : Oui." <<endl;
@@ -20,6 +21,7 @@ void Terrain::affiche(){
   else {
     cout << "Constructible : Non." << endl;
   }
+  cout << "\n" << endl;
 }
 
 void Terrain::recherche(){

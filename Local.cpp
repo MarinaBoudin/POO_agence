@@ -17,11 +17,13 @@ bool Local::get_espace_stockage() {
     return espace_stockage;
 }
 void Local::affiche(){
+  cout << "Type : LOCAL" << endl;
   Bien::affiche();
   cout << "Taille de la vitrine : " << taille_vitrine << endl;
   if (espace_stockage==true){
     cout << "Présence d'un espace de stockage." <<endl;
   }
+  cout << "\n" << endl;
 }
 
 void Local::recherche(){

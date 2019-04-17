@@ -28,6 +28,7 @@ bool Maison::get_piscine() {
     return piscine;
 }
 void Maison::affiche(){
+  cout << "Type : MAISON" << endl;
   Bien::affiche();
   cout << "Nombre de pièces : " << piece <<endl;
   if (garage==true){
@@ -39,6 +40,7 @@ void Maison::affiche(){
   if (piscine==true){
     cout << "Présence d'une piscine." << endl;
   }
+  cout << "\n" << endl;
 }
 
 void Maison::recherche(){

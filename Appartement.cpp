@@ -38,6 +38,7 @@ int Appartement::get_nb_appart() {
     return nb_appart;
 }
 void Appartement::affiche(){
+  cout << "Type : APPARTEMENT" << endl;
   Bien::affiche();
   cout << "Nombre de pièces : " << pieces << endl;
   cout << "Etages où se trouve l'appartement : " << etage << endl;
@@ -50,7 +51,7 @@ void Appartement::affiche(){
   if (balcon==true){
     cout << "Présence d'un balcon." << endl;
   }
-  cout << "Nombre d'appartement dans l'immeuble : " << nb_appart << endl;
+  cout << "Nombre d'appartement dans l'immeuble : " << nb_appart << "\n"<< endl;
 }
 
 

@@ -41,7 +41,6 @@ void Bien::affiche(){
   cout << "Prix : " << prix << endl;
   cout << "Adresse : " ;
   adresse.show() ;
-  cout << "\n";
   cout << "Nombre de m² : " << m2 << endl;
   cout << "Référence client : " << ref_client << endl;
   cout << "Référence catalogue : " << ref_catalogue << endl;
