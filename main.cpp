@@ -275,8 +275,8 @@ Agence ajout_maison(Agence mon_agence, int _prix, int _m2, int ref) {
     if (_pi == 1) {
         _piscine = true;
     }
-    Maison *nouveau_maison = new Maison(_prix, _m2, ref, _pieces, _garage, _jardin, _piscine);
-    mon_agence.ajout_bien("Maison", nouveau_maison);
+    Maison *nouvelle_maison = new Maison(_prix, _m2, ref, _pieces, _garage, _jardin, _piscine);
+    mon_agence.ajout_bien("Maison", nouvelle_maison);
     return mon_agence;
 }
 
