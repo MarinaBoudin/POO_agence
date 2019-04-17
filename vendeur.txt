@@ -1,0 +1,2 @@
+Charlotte,22,rue,trucbidule,33000,Bordeaux
+Elson,69,boulevard,Biloute,69000,Lyon
