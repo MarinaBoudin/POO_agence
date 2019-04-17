@@ -11,6 +11,13 @@ Maison::Maison(int _prix, int _m2, int _ref_client,int _piece, bool _garage, boo
   piscine=_piscine;
 }
 
+Maison::Maison(Adresse _adresse, int _prix, int _m2, int _ref_client, int _piece, bool _garage, bool _jardin,bool _piscine) : Bien(_adresse, _prix,_m2,_ref_client) {
+    piece = _piece;
+    garage = _garage;
+    jardin = _jardin;
+    piscine = _piscine;
+}
+
 int Maison::get_piece() {
     return piece;
 }

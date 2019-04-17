@@ -6,6 +6,8 @@ using namespace std;
 
 Vendeur::Vendeur(string nom) : Client(nom) {}
 
+Vendeur::Vendeur(std::string nom, Adresse _adresse) : Client(nom, _adresse) {}
+
 Vendeur::~Vendeur() {}
 
 string Vendeur::getnom() { return nom; }

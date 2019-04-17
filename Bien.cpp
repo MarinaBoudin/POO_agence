@@ -16,6 +16,16 @@ Bien::Bien(int _prix, int _m2, int _ref_client){
   ref_catalogue=id_bien;
 }
 
+Bien::Bien(Adresse _adresse, int _prix, int _m2, int _ref_client) {
+    adresse = _adresse;
+    prix = _prix;
+    m2 = _m2;
+    ref_client = _ref_client;
+    ref_catalogue++;
+}
+
+Bien::~Bien() {}
+
 int Bien::get_prix() {
     return prix;
 }

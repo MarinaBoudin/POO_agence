@@ -13,6 +13,8 @@ public:
 
     Acheteur(std::string nom);
 
+    Acheteur(std::string nom, Adresse _adresse);
+
     ~Acheteur();
 
     void show();

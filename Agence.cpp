@@ -33,7 +33,7 @@ vector<Acheteur> const& Agence::get_acheteurs() const {
   return acheteurs;
 }
 
-vector<Vendeur> Agence::get_vendeurs() {
+vector<Vendeur> const &Agence::get_vendeurs() const {
   return vendeurs;
 }
 

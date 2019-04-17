@@ -17,6 +17,12 @@ Client::Client(string nom) : nom(nom) {
     ref_client=id_client;
 }
 
+Client::Client(std::string nom, Adresse _adresse): nom(nom), adresse(_adresse){
+    id_client++;
+    ref_client=id_client;
+}
+
+
 Client::~Client() {};
 
 int Client::get_ref_client() { return ref_client; }

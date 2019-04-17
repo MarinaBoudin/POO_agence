@@ -13,6 +13,8 @@ private:
 
 public:
     Adresse();
+    Adresse(const std::string &voie, const std::string &nomVoie, const std::string &ville, int numero, int CP);
+    ~Adresse();
     void show();
     void remplir();
 };

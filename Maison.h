@@ -13,6 +13,7 @@ private:
     bool piscine;
   public:
     Maison(int _prix, int _m2, int _ref_client,int _piece, bool _garage, bool _jardin, bool _piscine);
+    Maison(Adresse _adresse, int _prix, int _m2, int _ref_client, int _piece, bool _garage, bool _jardin,bool _piscine);
     int get_piece();
     bool get_garage();
     bool get_jardin();

@@ -16,6 +16,8 @@ public:
 
     Client(std::string nom);
 
+    Client(std::string nom, Adresse _adresse);
+
     ~Client();
 
     int get_ref_client();

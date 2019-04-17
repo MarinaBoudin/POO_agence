@@ -8,6 +8,8 @@ Acheteur::Acheteur():Client(){}
 
 Acheteur::Acheteur(string nom) : Client(nom) {}
 
+Acheteur::Acheteur(std::string nom, Adresse _adresse) : Client(nom, _adresse) {}
+
 Acheteur::~Acheteur() {}
 
 string Acheteur::getnom() { return nom; }
