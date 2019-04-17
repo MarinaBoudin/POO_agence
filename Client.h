@@ -10,14 +10,15 @@ protected:
     std::string nom;
     Adresse adresse;
     static int id_client;
+    int ref_client;
 public:
-    Client(std::string nom);
+    Client();
 
-    Client(std::string nom, Adresse _adresse);
+    Client(std::string nom);
 
     ~Client();
 
-    static int get_id();
+    int get_ref_client();
 
     virtual std::string getnom() = 0;
 

@@ -23,12 +23,12 @@ class Agence {
     Agence();
     std::map<std::string, std::map<Bien*,std::vector<Acheteur>>> get_dico_biens();
     const std::vector<Acheteur> & get_acheteurs() const;
-
-    const std::vector<Vendeur> &get_vendeurs() const;
+    std::vector<Vendeur> get_vendeurs();
     void ajout_acheteur(Acheteur& a);
     void ajout_vendeur(Vendeur& v);
     void ajout_bien(std::string a, Bien* b);
     void recherche_biens();
+    void proposition_achat();
 };
 
 

@@ -33,7 +33,7 @@ vector<Acheteur> const& Agence::get_acheteurs() const {
   return acheteurs;
 }
 
-vector<Vendeur> const &Agence::get_vendeurs() const {
+vector<Vendeur> Agence::get_vendeurs() {
   return vendeurs;
 }
 
@@ -85,30 +85,51 @@ void Agence::recherche_biens(){
   for (int i=0; i<vectorfiltre.size();i++){
         Bien* a = vectorfiltre[i];
         a->recherche();
-      }
-  // switch(nb){
-  //   case 1:
-  //     // cout << vectorfiltre.size() << endl;
-  //     for (int i=0; i<vectorfiltre.size();i++){
-  //       Bien* a = vectorfiltre[i];
-  //       a->recherche();
-  //     }
-  //     break;
-  //   case 2:
-  //     for (int i=0; i<vectorfiltre.size();i++){
-  //       Bien* a = vectorfiltre[i];
-  //       a->recherche();
-  //     }
-  //     // recherche_maison();
-  //     break;
-  //   case 3:
-  //     // recherche_local();
-  //     break;
-  //   case 4:
-  //     // recherche_terrain();
-  //     break;
-  //   default :
-  //     cout << "Choix non reconnu." << endl;
-  //     break;
-  // }
+    }
+}
+
+void Agence::proposition_achat(){
+  cout << " Pour quel type de bien souhaitez-vous faire une proposition d'achat ? Appartement(1), maison(2), local(3) ou terrain(4)." << endl;
+  int type;
+  cin >> type;
+  string typebien;
+  if (type==1){typebien="Appartement";}
+  else if (type==2){typebien=="Maison";}
+  else if (type==3){typebien=="Local";}
+  else if (type==4){typebien=="Terrain";}
+  cout << "Quelle-est la référence catalogue du bien souhaité ?" << endl;
+  int refbien;
+  cin >> refbien;
+  cout << "Quelle-est la référence du client ACHETEUR ?" << endl;
+  int refacheteur;
+  cin >> refacheteur;
+  cout << "Quel prix proposez-vous pour ce bien ?" << endl;
+  int prixpropo;
+  cin >> prixpropo;
+  Acheteur acheteurcible;
+  for (int i=0; i<acheteurs.size();i++){
+    if ((acheteurs[i].get_ref_client())==refacheteur){
+      acheteurcible = acheteurs[i];
+    }
+  }
+  Bien* biencible;
+  acheteurcible.Avisiter(refbien,1,prixpropo);
+  map<Bien*,vector<Acheteur>>::iterator im;
+  for (im=dico_biens[typebien].begin();im!=dico_biens[typebien].end();im++){
+    // CETTE BOUCLE DE FONCTIONNE PAS, POURQUOIIIIIIIII
+    cout << "MDRRRRRRRRRRR" << endl;
+    Bien* biencible = im->first;
+    if (biencible->get_ref_catalogue() == refbien){
+      vector <Acheteur> offre = dico_biens[typebien][biencible];
+      offre.push_back(acheteurcible);
+    }
+  }
+  //test d'affichage
+  vector<Acheteur> test;
+  test = dico_biens[typebien][biencible];
+  for (int i=0; i<test.size();i++){
+    acheteurs[i].show();
+    acheteurs[i].affiche_visites(refbien);
+  }
+  //
 }

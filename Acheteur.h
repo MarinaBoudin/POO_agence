@@ -7,11 +7,11 @@
 
 class Acheteur : public Client {
 private:
-    std::map<int, std::pair<std::string, int>> visites;
+    std::map<int, std::pair<int, int>> visites;
 public:
-    Acheteur(std::string nom);
+    Acheteur();
 
-    Acheteur(std::string nom, Adresse _adresse);
+    Acheteur(std::string nom);
 
     ~Acheteur();
 
@@ -22,6 +22,8 @@ public:
     void Avisiter(int ref_catalogue, int prop, int montant);
 
     void retirerVisite(int ref_catalogue);
+
+    void affiche_visites(int ref);
 
     bool operator<(const Acheteur& other);
 };
