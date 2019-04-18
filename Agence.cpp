@@ -97,8 +97,12 @@ void Agence::bien_txt() {
                     } else { cout << "Pas de vendeur ayant cette référence" << endl; }
                 }
             } else if (choix == "0") {
-                cout << "Il faut créer le vendeur pour ce bien" << endl;
-                //TODO création vendeur
+                cout << "Il faut créer le vendeur pour ce bien, entrez son nom : " << endl;
+                string nom;
+                cin >> nom;
+                Vendeur newVendeur = Vendeur(nom);
+                ajout_vendeur(newVendeur);
+                res.push_back(to_string(newVendeur.get_ref_client()));
             }
             if (res[0] == "a") {
                 lectureAppart(res, newAdresse);
