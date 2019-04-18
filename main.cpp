@@ -47,6 +47,7 @@ int main() {
               mon_agence.contrats();
               break;
           case 0 :
+              mon_agence.deleteagence();
               return run = false;
               break;
           default :

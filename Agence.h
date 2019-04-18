@@ -44,6 +44,7 @@ class Agence {
     void proposition_achat();
     void contrats();
     std::string queltype();
+    void deleteagence();
 };
 
 

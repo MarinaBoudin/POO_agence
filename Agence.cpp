@@ -514,3 +514,14 @@ string Agence::queltype(){
   }
   return typebien;
 }
+
+void Agence::deleteagence(){
+  vector<string> types{"Appartement","Local","Maison","Terrain"};
+  for (int k=0;k<types.size();k++){
+    map<Bien*, vector<Acheteur>>::iterator im;
+    if (im!=dico_biens[types[k]].end()){
+      delete im->first;
+      dico_biens[types[k]].erase(im);
+    }
+  }
+}
