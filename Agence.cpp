@@ -37,44 +37,44 @@ vector<Vendeur> const &Agence::get_vendeurs() const {
 
 void Agence::lectureAppart(vector<string> res, Adresse &adresse) {
     bool garage;
-    istringstream(res[11]) >> garage;
+    istringstream(res[10]) >> garage;
     bool cave;
-    istringstream(res[12]) >> cave;
+    istringstream(res[11]) >> cave;
     bool balcon;
-    istringstream(res[13]) >> balcon;
-    Appartement a(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stoi(res[9]), stoi(res[10]), garage,
+    istringstream(res[12]) >> balcon;
+    Appartement a(adresse, stoi(res[6]), stoi(res[7]), stoi(res[14]), stoi(res[8]), stoi(res[9]), garage,
                   cave,
-                  balcon, stoi(res[14]));
+                  balcon, stoi(res[13]));
     ajout_bien("Appartement", &a);
 }
 
 void Agence::lectureLocal(vector<string> res, Adresse &adresse) {
     bool stockage;
-    istringstream(res[10]) >> stockage;
-    Local l(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stof(res[9]), stockage);
+    istringstream(res[9]) >> stockage;
+    Local l(adresse, stoi(res[6]), stoi(res[7]), stoi(res[10]), stof(res[8]), stockage);
     ajout_bien("Local", &l);
 }
 
 void Agence::lectureMaison(vector<string> res, Adresse &adresse) {
     bool garage;
-    istringstream(res[10]) >> garage;
+    istringstream(res[9]) >> garage;
     bool jardin;
-    istringstream(res[11]) >> jardin;
+    istringstream(res[10]) >> jardin;
     bool piscine;
-    istringstream(res[12]) >> piscine;
-    Maison m(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), stoi(res[9]), garage, jardin, piscine);
+    istringstream(res[11]) >> piscine;
+    Maison m(adresse, stoi(res[6]), stoi(res[7]), stoi(res[12]), stoi(res[8]), garage, jardin, piscine);
     ajout_bien("Maison", &m);
 }
 
 void Agence::lectureTerrain(vector<string> res, Adresse &adresse) {
     bool constructible;
-    istringstream(res[9]) >> constructible;
-    Terrain t(adresse, stoi(res[6]), stoi(res[7]), stoi(res[8]), constructible);
+    istringstream(res[8]) >> constructible;
+    Terrain t(adresse, stoi(res[6]), stoi(res[7]), stoi(res[9]), constructible);
     ajout_bien("Terrain", &t);
 }
 
 void Agence::bien_txt() {
-    string const nomFic("bien.txt");
+    string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\bien.txt");
     ifstream ficBiens(nomFic.c_str());  //ouverture en lecture
     if (ficBiens) {
         string line;
@@ -88,34 +88,44 @@ void Agence::bien_txt() {
             Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));
             string choix;
             cout << "Quel est la référence vendeur pour ce bien ? : (0 si pas de vendeur associé)" << endl;
+            newAdresse.show();
             cin >> choix;
-            if (choix != "0") {
-                for (int i = 0; vendeurs.size(); i++) {
-                    int reftmp = vendeurs[i].get_ref_client();
-                    if (stoi(choix) == reftmp) {
-                        res.push_back(choix); //si le vendeur existe
-                    } else { cout << "Pas de vendeur ayant cette référence" << endl; }
-                }
-            } else if (choix == "0") {
+            bool ok = false;
+            if (choix == "0") { //Cas de création de vendeur
                 cout << "Il faut créer le vendeur pour ce bien, entrez son nom : " << endl;
                 string nom;
                 cin >> nom;
                 Vendeur newVendeur = Vendeur(nom);
                 ajout_vendeur(newVendeur);
                 res.push_back(to_string(newVendeur.get_ref_client()));
+                ok = true;
             }
-            if (res[0] == "a") {
-                lectureAppart(res, newAdresse);
-            } else if (res[0] == "l") {
-                lectureLocal(res, newAdresse);
-            } else if (res[0] == "m") {
-                lectureMaison(res, newAdresse);
-            } else if (res[0] == "t") {
-                lectureTerrain(res, newAdresse);
-            } else {
-                cout << "Erreur de lecture du type de bien à l'adresse : " << endl;
-                newAdresse.show();
-                cout << "passage au bien suivant..." << endl;
+            else if (choix != "0") { //Cas de recherche du vendeur avec l'identifiant communiqué
+                for (int i = 0; i < vendeurs.size(); i++) {
+                    int reftmp = vendeurs[i].get_ref_client();
+                    cout << reftmp << endl;
+                    if (stoi(choix) == reftmp) {
+                        res.push_back(choix); //si le vendeur existe
+                        ok = true;
+                        break;
+                    }
+                }
+                if(!ok) {cout << "Pas de vendeur ayant cette référence : " << choix << endl;}
+            }
+            if (ok) {
+                if (res[0] == "a") {
+                    lectureAppart(res, newAdresse);
+                } else if (res[0] == "l") {
+                    lectureLocal(res, newAdresse);
+                } else if (res[0] == "m") {
+                    lectureMaison(res, newAdresse);
+                } else if (res[0] == "t") {
+                    lectureTerrain(res, newAdresse);
+                } else {
+                    cout << "Erreur de lecture du type de bien à l'adresse : " << endl;
+                    newAdresse.show();
+                    cout << "passage au bien suivant..." << endl;
+                }
             }
         }
         ficBiens.close();
@@ -124,7 +134,7 @@ void Agence::bien_txt() {
 }
 
 void Agence::acheteur_txt() {
-    string const nomFic("acheteur.txt");
+    string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\acheteur.txt");
     ifstream ficAcheteurs(nomFic.c_str());  // ouverture en lecture
     if (ficAcheteurs) {
         string line;
@@ -145,7 +155,7 @@ void Agence::acheteur_txt() {
 }
 
 void Agence::vendeur_txt() {
-    string const nomFic("vendeur.txt");
+    string const nomFic("C:\\Users\\antoi\\Dropbox\\Master\\M1S2\\POO\\Projet\\POO_agence\\vendeur.txt");
     ifstream ficVendeurs(nomFic.c_str());  // ouverture en lecture
     if (ficVendeurs) {
         string line;
@@ -160,7 +170,6 @@ void Agence::vendeur_txt() {
             Vendeur v(res[0], newAdresse);
             ajout_vendeur(v);
         }
-        ficVendeurs.close();
     } else
         cerr << "Impossible d'ouvrir le fichier !" << endl;
 }
