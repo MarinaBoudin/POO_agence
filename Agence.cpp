@@ -86,26 +86,33 @@ void Agence::bien_txt() {
                 res.push_back(sousChaine);
             }
             Adresse newAdresse(res[2], res[3], res[5], stoi(res[1]), stoi(res[4]));
-            //1:Appartement, 2:Local, 3:Maison, 4:Terrain
-            switch (stoi(res[0])) {
-                case 1 :
-                    lectureAppart(res, newAdresse);
-                    break;
-                case 2 :
-                    lectureLocal(res, newAdresse);
-                    break;
-                case 3 :
-                    lectureMaison(res, newAdresse);
-                    break;
-                case 4 :
-                    lectureTerrain(res, newAdresse);
-                    break;
-                default:
-                    cout << "Erreur de lecture de l'indice du fichier" << endl;
-                    break;
+            string choix;
+            cout << "Quel est la référence vendeur pour ce bien ? : (0 si pas de vendeur associé)" << endl;
+            cin >> choix;
+            if (choix != "0") {
+                for (int i = 0; vendeurs.size(); i++) {
+                    int reftmp = vendeurs[i].get_ref_client();
+                    if (stoi(choix) == reftmp) {
+                        res.push_back(choix); //si le vendeur existe
+                    } else { cout << "Pas de vendeur ayant cette référence" << endl; }
+                }
+            } else if (choix == "0") {
+                cout << "Il faut créer le vendeur pour ce bien" << endl;
+                //TODO création vendeur
             }
-
-
+            if (res[0] == "a") {
+                lectureAppart(res, newAdresse);
+            } else if (res[0] == "l") {
+                lectureLocal(res, newAdresse);
+            } else if (res[0] == "m") {
+                lectureMaison(res, newAdresse);
+            } else if (res[0] == "t") {
+                lectureTerrain(res, newAdresse);
+            } else {
+                cout << "Erreur de lecture du type de bien à l'adresse : " << endl;
+                newAdresse.show();
+                cout << "passage au bien suivant..." << endl;
+            }
         }
         ficBiens.close();
     } else
