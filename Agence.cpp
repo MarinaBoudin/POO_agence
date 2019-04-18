@@ -401,7 +401,7 @@ void Agence::recherche_biens(){
   map<Bien*,vector<Acheteur>>::iterator im;
   for (im=dico_biens[typebien].begin();im!=dico_biens[typebien].end();im++){
     Bien* biencible = im->first;
-    if (((biencible->get_prix() <= choixprix) || (choixprix==0)) && ((biencible->get_m2() <= choixm2) || (choixm2==0))){
+    if (((biencible->get_prix() <= choixprix) || (choixprix==0)) && ((biencible->get_m2() >= choixm2) || (choixm2==0))){
       vectorfiltre.push_back(biencible);
     }
   }
@@ -419,9 +419,14 @@ void Agence::proposition_achat(){
   cout << "Quelle est la référence du client ACHETEUR ?" << endl;
   int refacheteur;
   cin >> refacheteur;
-  cout << "Quel prix proposez-vous pour ce bien ?" << endl;
+  cout << "Voulez-vous faire une proposition ? (1 : oui, 2 : non)" << endl;
+  int prop;
+  cin >> prop;
   int prixpropo;
-  cin >> prixpropo;
+  if (prop == 1) {
+      cout << "Quel prix proposez-vous pour ce bien ?" << endl;
+      cin >> prixpropo;
+  } else {prop = 0; prixpropo = 0;}
   Acheteur acheteurcible;
   for (int i=0; i<acheteurs.size();i++){
     if ((acheteurs[i].get_ref_client())==refacheteur){
@@ -429,7 +434,7 @@ void Agence::proposition_achat(){
     }
   }
   Bien* bien;
-  acheteurcible.Avisiter(refbien,1,prixpropo);
+  acheteurcible.Avisiter(refbien,prop,prixpropo);
   map<Bien*,vector<Acheteur>>::iterator im;
   for (im=dico_biens[typebien].begin();im!=dico_biens[typebien].end();im++){
     bien = im->first;
