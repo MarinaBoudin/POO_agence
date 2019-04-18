@@ -17,7 +17,7 @@ using namespace std;
 void menu_print() {
     cout << "1- Créer un ou plusieurs client(s) acheteur(s) et/ou vendeur(s)." << endl;
     cout << "2- Enregistrement d'un bien." << endl;
-    cout << "3- Enregistrement d'une proposition d'achat à un client." << endl;
+    cout << "3- Enregistrement d'une visite et possibilité de créer une proposition d'achat." << endl;
     cout << "4- Afficher tous les biens existants avec des paramètres spécifiques." << endl;
     cout << "5- Gérer les contrats de vente." << endl;
     cout << "0- Quitter le gestionnaire." << endl;

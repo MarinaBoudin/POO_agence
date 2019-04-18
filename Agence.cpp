@@ -327,7 +327,7 @@ void Agence::creer_bien() {
     int nb_biens;
     cin >> nb_biens;
     for (int i=0;i<nb_biens;i++){
-      cout << "Veuillez donner la référence client pour le bien ?" << endl;
+      cout << "Veuillez donner la référence client vendeur pour le bien ?" << endl;
       int ref;
       cin >> ref;
       int taille = vendeurs.size();
@@ -419,7 +419,7 @@ void Agence::proposition_achat(){
   cout << "Quelle est la référence du client ACHETEUR ?" << endl;
   int refacheteur;
   cin >> refacheteur;
-  cout << "Voulez-vous faire une proposition ? (1 : oui, 2 : non)" << endl;
+  cout << "La visite du bien (ref " << refbien << ") a été ajouté. Voulez-vous faire une proposition ? (1 : oui, 2 : non)" << endl;
   int prop;
   cin >> prop;
   int prixpropo;
