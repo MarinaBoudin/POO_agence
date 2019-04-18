@@ -75,7 +75,7 @@ void Agence::lectureTerrain(vector<string> res, Adresse &adresse) {
 
 void Agence::bien_txt() {
     string const nomFic("bien.txt");
-    ifstream ficBiens(nomFic.c_str());  // ouverture en lecture
+    ifstream ficBiens(nomFic.c_str());  //ouverture en lecture
     if (ficBiens) {
         string line;
         while (getline(ficBiens, line)) {
@@ -369,9 +369,7 @@ void Agence::ajout_bien(string a, Bien* b){
 }
 
 void Agence::recherche_biens(){
-  cout << "Recherchez vous un appartement(1), une maison(2), un local (3) ou un terrain(4) ?";
-  int nb;
-  cin >> nb;
+  string typebien = queltype();
   cout << "Choix de filtres de recherche. Tappez 0 si vous ne désirez pas filtrer suivant le paramètre demandé -> " << endl;
   cout << "PRIX -> Entrez le prix maximal du bien que vous désirez acheter :" << endl;
   int choixprix;
@@ -379,15 +377,9 @@ void Agence::recherche_biens(){
   cout << "SURFACE -> Entrez la surface minimale en m2 :" << endl;
   int choixm2;
   cin >> choixm2;
-  string type;
-  if (nb==1){type="Appartement";}
-  else if (nb==2){type="Maison";}
-  else if (nb==3){type="Local";}
-  else if (nb==4){type="Terrain";}
-  else {cout << "Choix non reconnu." << endl;}
   vector<Bien*> vectorfiltre;
   map<Bien*,vector<Acheteur>>::iterator im;
-  for (im=dico_biens[type].begin();im!=dico_biens[type].end();im++){
+  for (im=dico_biens[typebien].begin();im!=dico_biens[typebien].end();im++){
     Bien* biencible = im->first;
     if (((biencible->get_prix() <= choixprix) || (choixprix==0)) && ((biencible->get_m2() <= choixm2) || (choixm2==0))){
       vectorfiltre.push_back(biencible);
@@ -400,14 +392,7 @@ void Agence::recherche_biens(){
 }
 
 void Agence::proposition_achat(){
-  cout << " Pour quel type de bien souhaitez-vous faire une proposition d'achat ? Appartement(1), maison(2), local(3) ou terrain(4)." << endl;
-  int type;
-  cin >> type;
-  string typebien;
-  if (type==1){typebien="Appartement";}
-  else if (type==2){typebien="Maison";}
-  else if (type==3){typebien="Local";}
-  else if (type==4){typebien="Terrain";}
+  string typebien = queltype();
   cout << "Quelle est la référence catalogue du bien souhaité ?" << endl;
   int refbien;
   cin >> refbien;
@@ -424,14 +409,12 @@ void Agence::proposition_achat(){
     }
   }
   Bien* bien;
-  Bien* biencible;
   acheteurcible.Avisiter(refbien,1,prixpropo);
   map<Bien*,vector<Acheteur>>::iterator im;
   for (im=dico_biens[typebien].begin();im!=dico_biens[typebien].end();im++){
     bien = im->first;
     if (bien->get_ref_catalogue() == refbien){
-      biencible = bien;
-      dico_biens[typebien][biencible].push_back(acheteurcible);
+      dico_biens[typebien][bien].push_back(acheteurcible);
     }
   }
 }
@@ -440,14 +423,7 @@ void Agence::contrats(){
   cout << "Quelle est la référence du client vendeur ?" << endl;
   int refv;
   cin >> refv;
-  cout << "Quel type de bien est-ce ? Appartemment(1), Local(2), Maison(3) ou Terrain(4)" << endl;
-  string typebien;
-  int typeb;
-  cin >> typeb;
-  if (typeb==1){typebien="Appartement";}
-  else if (typeb==2){typebien="Local";}
-  else if (typeb==3){typebien="Maison";}
-  else if (typeb==4){typebien="Terrain";}
+  string typebien = queltype();
   cout << "Quelle est la référence catalogue du bien souhaité ?" << endl;
   int refb;
   cin >> refb;
@@ -501,4 +477,29 @@ void Agence::contrats(){
     }
   }
   dico_biens[typebien].erase(tmpb);
+}
+
+string Agence::queltype(){
+  cout << "Quel type de bien est-ce ? Appartemment(1), Local(2), Maison(3) ou Terrain(4)" << endl;
+  string typebien;
+  int typeb;
+  cin >> typeb;
+  switch (typeb) {
+    case 1:
+      typebien="Appartement";
+      break;
+    case 2:
+      typebien="Local";
+      break;
+    case 3:
+      typebien="Maison";
+      break;
+    case 4:
+      typebien="Terrain";
+      break;
+    default :
+      cout << "Choix non reconnu." << endl;
+      break;
+  }
+  return typebien;
 }

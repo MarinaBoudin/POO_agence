@@ -35,6 +35,7 @@ void Vendeur::retirer_vente(Bien *b) {
             listBiens.erase(listBiens.begin()+k);
         }
     }
+
 }
 
 void Vendeur::push_bien(Bien* b){

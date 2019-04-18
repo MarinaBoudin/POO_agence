@@ -43,6 +43,7 @@ class Agence {
     void recherche_biens();
     void proposition_achat();
     void contrats();
+    std::string queltype();
 };
 
 
