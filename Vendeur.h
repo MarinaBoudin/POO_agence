@@ -25,8 +25,6 @@ public:
 
     std::string getnom();
 
-    void ajouter_vente(Bien *b);
-
     void retirer_vente(Bien *b);
 
     void push_bien(Bien* b);

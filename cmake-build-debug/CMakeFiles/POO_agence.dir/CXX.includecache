@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Acheteur.cpp
-iostream
--
-Acheteur.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Acheteur.h
-map
--
-
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Acheteur.h
 map
 -
@@ -21,12 +13,6 @@ Client.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Client.h
 map
 -
-
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.cpp
-iostream
--
-Adresse.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
 
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
 string
@@ -84,22 +70,6 @@ map
 vector
 -
 
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Appartement.cpp
-Appartement.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Appartement.h
-Adresse.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
-Bien.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
-Acheteur.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Acheteur.h
-iostream
--
-map
--
-vector
--
-
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Appartement.h
 Adresse.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
@@ -108,16 +78,6 @@ C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
 iostream
 -
 
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.cpp
-Bien.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
-Adresse.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
-string
--
-iostream
--
-
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
 string
 -
@@ -125,12 +85,6 @@ Adresse.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
 iostream
 -
-
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Client.cpp
-iostream
--
-Client.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Client.h
 
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Client.h
 string
@@ -138,31 +92,11 @@ string
 Adresse.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
 
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Local.cpp
-Local.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Local.h
-Adresse.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
-Bien.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
-iostream
--
-
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Local.h
 Bien.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
 Adresse.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
-iostream
--
-
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Maison.cpp
-Maison.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Maison.h
-Adresse.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
-Bien.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
 iostream
 -
 
@@ -174,30 +108,12 @@ C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
 iostream
 -
 
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Terrain.cpp
-Terrain.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Terrain.h
 Adresse.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
 Bien.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
 iostream
--
-
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Terrain.h
-Adresse.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
-Bien.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
-iostream
--
-
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Vendeur.cpp
-iostream
--
-Vendeur.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Vendeur.h
-vector
 -
 
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Vendeur.h
@@ -209,30 +125,4 @@ Client.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Client.h
 Bien.h
 C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
-
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/main.cpp
-Acheteur.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Acheteur.h
-Vendeur.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Vendeur.h
-Adresse.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Adresse.h
-Bien.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Bien.h
-Appartement.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Appartement.h
-Maison.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Maison.h
-Terrain.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Terrain.h
-Local.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Local.h
-Agence.h
-C:/Users/antoi/Dropbox/Master/M1S2/POO/Projet/POO_agence/Agence.h
-iostream
--
-fstream
--
-sstream
--
 
