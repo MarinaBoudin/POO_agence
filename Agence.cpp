@@ -489,19 +489,19 @@ void Agence::contrats(){
   if (choix==1){
     cout << "Entrez l'ID du client acheteur souhaité :" << endl;
     cin >> choixa;
-  }
-  tmp.retirer_vente(tmpb);
-  for (int k=0;k<listacheteurs.size(); k++){
-    map<int, pair<int, int>> visites = listacheteurs[k].get_visites();
-    map<int, pair<int, int>>::iterator im;
-    for (im=visites.begin();im!=visites.end();im++){
-      int refc = im->first;
-      if (refc == refb){
-        visites.erase(refc);
+    tmp.retirer_vente(tmpb);
+    for (int k=0;k<listacheteurs.size(); k++){
+      map<int, pair<int, int>> visites = listacheteurs[k].get_visites();
+      map<int, pair<int, int>>::iterator im;
+      for (im=visites.begin();im!=visites.end();im++){
+        int refc = im->first;
+        if (refc == refb){
+          visites.erase(refc);
+        }
       }
     }
+    dico_biens[typebien].erase(tmpb);
   }
-  dico_biens[typebien].erase(tmpb);
 }
 
 string Agence::queltype(){
