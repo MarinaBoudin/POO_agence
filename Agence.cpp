@@ -536,9 +536,9 @@ void Agence::deleteagence(){
     cout << size << endl;
     if (size!=0){
       map<Bien*, vector<Acheteur>>::iterator im;
-      if (im!=dico_biens[types[k]].end()){
+      for (im=dico_biens[types[k]].begin();im!=dico_biens[types[k]].end();im++){
         delete im->first;
-        // dico_biens[types[k]].erase(im);
+        dico_biens[types[k]].erase(im);
       }
     }
   }
