@@ -28,9 +28,10 @@ class Agence {
     void lectureLocal(std::vector<std::string> res, Adresse &adresse);
     void lectureMaison(std::vector<std::string> res, Adresse &adresse);
     void lectureTerrain(std::vector<std::string> res, Adresse &adresse);
-    void bien_txt();
-    void acheteur_txt();
-    void vendeur_txt();
+
+    void bien_txt(const std::string path);
+
+    void client_txt(const std::string path, const int type);
     void creer_client();
     void ajout_appartement(Adresse _adresse,int _prix,int _m2,int ref);
     void ajout_local(Adresse _adresse,int _prix,int _m2,int ref);
