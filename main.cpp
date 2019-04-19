@@ -48,7 +48,7 @@ int main() {
               break;
           case 0 :
               mon_agence.deleteagence();
-              return run = false;
+              run = false;
               break;
           default :
               cout << "Choix invalide." << endl;
